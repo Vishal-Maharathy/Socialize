@@ -5,7 +5,7 @@ const app = express();
 const db = require('./config/mongoose');
 const customMware = require('./config/middleware')
 const env = require('./config/environment')
-
+const path = require('path')
 
 
 //used for session cookie
@@ -25,16 +25,14 @@ const flash = require('connect-flash');
 require('./controllers/sockets').chatSockets(5000)
 console.log("Chat server is listening on 5000")
 
-const path = require('path')
-
-// if(env.name=='development'){
-//     app.use(sassMiddleware({
-//     src: path.join(__dirname, env.asset_path, 'scss'),
-//     dest: path.join(__dirname, env.asset_path, 'css'),
-//     debug: true,
-//     outputStyle: 'extended',
-//     prefix: '/css'
-// }))}
+if(env.name=='development'){
+    app.use(sassMiddleware({
+    src: path.join(__dirname, env.asset_path, 'scss'),
+    dest: path.join(__dirname, env.asset_path, 'css'),
+    debug: true,
+    outputStyle: 'extended',
+    prefix: '/css'
+}))}
 
 // app.use(express.json())
 app.use(express.urlencoded({extended: true}));
