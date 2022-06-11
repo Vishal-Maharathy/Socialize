@@ -5,7 +5,7 @@ const app = express();
 const db = require('./config/mongoose');
 const customMware = require('./config/middleware')
 const env = require('./config/environment')
-const logger = require('morgan')
+
 
 
 //used for session cookie
@@ -74,9 +74,6 @@ app.use(customMware.setFlash);
 
 // make the uploads part visible to the browser
 app.use('/uploads', express.static(__dirname + '/uploads'));
-
-// for logging logs when in production mode
-app.use(logger(env.morgan.mode, env.morgan.options))
 
 // if the address is like (http://localhost:8000/), then it will route the website to routes folder.
 app.use('/', require('./routes')); 

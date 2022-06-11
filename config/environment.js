@@ -28,12 +28,8 @@ const development = {
     },
     google_clientID: '304321416322-ddodi9p4ch74fj7p4ais41a2lau59u76.apps.googleusercontent.com',
     google_clientSecret: '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',
-    google_callbackURL: 'http://localhost:8000/auth/google/callback',
+    google_callbackURL: 'http://34.211.120.190:8000/auth/google/callback',
     jwtSecretKey: 'daddysboiii',
-    morgan: {
-        mode: 'dev',
-        options: {accessLogStream}
-    }
 }
 
 const production = {
@@ -55,11 +51,7 @@ const production = {
     google_clientID: '304321416322-ddodi9p4ch74fj7p4ais41a2lau59u76.apps.googleusercontent.com',
     google_clientSecret: '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',
     google_callbackURL: 'http://localhost:8000/auth/google/callback',
-    jwtSecretKey: 'daddysboiii',
-    morgan: {
-        mode: 'combined',
-        options: {accessLogStream}
-    }
+    jwtSecretKey: 'daddysboiii'
 }
 
 module.exports = eval(process.env.NODE_ENV) == undefined?development:production 
