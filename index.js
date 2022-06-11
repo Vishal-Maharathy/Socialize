@@ -55,7 +55,7 @@ app.use(session({
     //here we are using mongo store to store the session cookie so that after restarting server we still have cookie saved
     store: MongoStore.create(
         {
-            mongoUrl : 'mongodb://localhost/codeial_development'
+            mongoUrl : `mongodb+srv://vishalm76:${env.db_pass}@majorproject.e7pto.mongodb.net/${env.db}`
             // autoRemove: 'disabled'
         },
         function(err){
