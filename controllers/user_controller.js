@@ -4,8 +4,8 @@ const path = require('path');
 const jwt = require('jsonwebtoken')
 
 //below are imported for sending mail for resetting password
-const queue = require('../config/kue')
-const passResetWorker = require('../workers/password_reset')
+// const queue = require('../config/kue')
+// const passResetWorker = require('../workers/password_reset')
 const passReserMailer = require('../mailer/password_reset_mailer')
 
 //this is profile in the coding ninjas videos, don't get confused.
@@ -103,9 +103,12 @@ module.exports.passwordreset = function(req, res){
                 email: req.body.email,
                 link: fullUrl+'/'+token
             }
-            let job = queue.create('passreset', data).save((err)=>{
-                if(err){console.log("error creating a queue!-->", err); return;}
-            })
+            // changing this to remove the kue functionality
+            // let job = queue.create('passreset', data).save((err)=>{
+            //     if(err){console.log("error creating a queue!-->", err); return;}
+            // })
+            passReserMailer.resetPassword(data)
+
 
             //creating values in the database
             passSchema.create({

@@ -2,8 +2,9 @@ const { redirect } = require('express/lib/response')
 const Comment = require('../models/comments')
 const Post = require('../models/post')
 const commentsMailer = require('../mailer/comments_mailer')
-const queue = require('../config/kue')
-const commentEmailWorker = require('../workers/comment_email_worker')
+// const queue = require('../config/kue')
+// const commentEmailWorker = require('../workers/comment_email_worker')
+const commentMailer = require('../mailer/comments_mailer')
 const Like = require('../models/likes')
 
 module.exports.create = async function (req, res) {
@@ -45,11 +46,17 @@ module.exports.create = async function (req, res) {
                 // EARLIER the above line was to be executed, but since this may overlaod the server when large no of
                 // users are making comments, therefore it must be handeled. so we are passing this in a QUEUE
                
+
                 // below we passed 'emails' which will tell which queue.process to trigger when saved job will be 
                 // passed to comment_email_worker.js
-                let job = queue.create('emails', comment).save((err)=>{
-                    if(err){console.log("error creating a queue!-->", err); return;}
-                })
+                commentMailer.newComment(comment)
+                // let job = queue.create('emails', comment).save((err)=>{
+                //     if(err){console.log("error creating a queue!-->", err); return;}
+                // })
+
+
+
+
                 console.log(comment)
                 if(req.xhr){
                     return res.status(200).json({

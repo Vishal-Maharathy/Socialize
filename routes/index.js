@@ -4,7 +4,6 @@
 // in controllers folder. This will remove code from main index.js file and will be written here and in controller folder.
 
 const express = require('express');
-const { app } = require('kue');
 const router = express.Router();
 const passport = require('passport');
 
