@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Reset Password
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/home_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+</head>
+
+<body>
+    <%- include('_header') %>
+        <h2 id="heading">Enter New Password</h2>
+        <div id="loginupForm">
+            <form action="/newpassword/<%=token%>" method="post">
+                <input type="password" name="password" placeholder="Enter New Password" required><br>
+                <input type="password" name="cpassword" placeholder="Confirm Password" required><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        
+        <!-- script for flash message -->
+        <script>
+            <% if (flash.success && flash.success.length > 0) { %>
+                new Noty({
+                    theme: 'sunset',
+                    text: '<%= flash.success %>',   
+                    type: 'success',
+                    layout: 'topRight',
+                    timeout: 1500
+                }).show();
+            <% } %>
+            <% if (flash.error && flash.error.length > 0) { %>
+                    new Noty({
+                        theme: 'sunset',
+                        text: '<%= flash.error %>',
+                        type: 'error',
+                        layout: 'topRight',
+                        timeout: 1500
+                    }).show();
+            <% } %>
+        </script>
+</body>
+
+</html>

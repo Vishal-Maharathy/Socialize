@@ -1,0 +1,28 @@
+<div id="left-fixed">   
+    <ul>
+        <%if(locals.user){%>
+        <!-- here we are using data- to add value to a div tag which can be accessed in JS by divElement.dataset.user_id -->
+            <div id="chat-options" class="left-pane-options" data-user_id = "<%=user.id%>">
+                Global Chat
+            </div>
+            <div id="messenger">
+                <!-- this will contain all the list of friends that the current user can chat to -->
+                    <div id="chat-options-list" class="chat-options-list">
+                        <% if(friends.length==0) { %>
+                            <div class="friends-display-content">Add some friends...</div>
+                        <% }else{ %>
+                            <% for(friend of friends) { %>
+                                <ul>
+                                    <a href="/chatLoad?currUser=<%=user.id%>&friend=<%=friend._id%>"><%=friend.name%></a>
+                                </ul>
+                            <% } %>
+                        <% } %>
+                    </div>
+                    <div class="left-pane-options">
+                        Profile
+                    </div>
+            </div>        
+            <%}%>
+        
+    </ul>  
+</div>

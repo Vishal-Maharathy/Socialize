@@ -1,0 +1,31 @@
+<div id="right-fixed">
+    <% if(locals.user){ %>
+        <div id="friends-list">
+            <div class="right-pane-section-heading">Friends</div>
+            <% if(friends.length==0) { %>
+                <div class="friends-display-content">Add some friends...</div>
+            <% }else{ %>
+                <% for(friend of friends) { %>
+                    <ul>
+                       
+                        <a class="friends-display-content" href="/users/profile/<%=friend._id%>"><%=friend.name%></a>
+                    </ul>
+                <% } %>
+            <% } %>
+        <%}%>
+    </div>
+    <section id="users-on-platform">
+        <!-- adding a check, if user is in locals then only load friends -->
+        <% if(locals.user){ %>
+            <div class="right-pane-section-heading">Users on this platform</div>
+            <% for(u of all_users) { %>
+                <ul>
+                    <a class="friends-display-content" href="/users/profile/<%= u.id %>">
+                        <img src="<%=u.avatar%>"> <%= u.name %>
+                    </a>
+                </ul>
+            <% } %>
+        <% } %>
+    </section>
+</div>
+       

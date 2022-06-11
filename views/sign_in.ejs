@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Sign In!
+    </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/home_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+</head>
+
+<body>
+    <%- include('_header') %>
+        <h2 id="heading">SignIn to connect with the world</h2>
+        <div id="loginupForm">
+            <form action="/succsign" method="post">
+                <input type="email" name="email" placeholder="Your E-mail" required><br>
+                <input type="password" name="password" placeholder="Password" required><br>
+                <input type="submit" value="Sign In">
+            </form>
+        </div>
+        <div id="bottomOptionsLogin">
+            <p><a href="/forgotpassword">Forgot Password?</a></p>
+            <p><a href="/auth/google">SignIn with Google!</a></p>
+        </div>
+        <!-- script for flash message -->
+        <script>
+            <% if (flash.success && flash.success.length > 0) { %>
+                new Noty({
+                    theme: 'sunset',
+                    text: '<%= flash.success %>',
+                    type: 'success',
+                    layout: 'topRight',
+                    timeout: 1500
+                }).show();
+            <% } %>
+            <% if (flash.error && flash.error.length > 0) { %>
+                    new Noty({
+                        theme: 'sunset',
+                        text: '<%= flash.error %>',
+                        type: 'error',
+                        layout: 'topRight',
+                        timeout: 1500,
+                    }).show();
+            <% } %>
+        </script>
+</body>
+
+</html>

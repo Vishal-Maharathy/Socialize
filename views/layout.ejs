@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="css/home_style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="/css/chat_box.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+<head>
+    <title><%= title %></title>
+    <link rel="icon" type="image/x-icon" href="../uploads/images/S.png">
+</head>
+<body>
+    <%- include('_header'); %>
+    <div id="home-layout">
+        <div id="left">
+                <%- include('_left_pane') %>      
+        </div>
+        <div id="layout-main">
+            <%- include('home') %>
+        </div>
+        <div id="right">
+            <%- include('_right_pane') %>  
+        </div>
+    </div>
+    <%- include('_chat_box') -%>
+</body>
+
+<script>
+    <% if (flash.success && flash.success.length > 0) { %>
+        new Noty({
+            theme: 'sunset',
+            text: '<%= flash.success %>',
+            type: 'success',
+            layout: 'topRight',
+            timeout: 1500
+        }).show();
+    <% } %>
+    <% if (flash.error && flash.error.length > 0) { %>
+        new Noty({
+            theme: 'sunset',
+            text: '<%= flash.error %>',
+            type: 'error',
+            layout: 'topRight',
+            timeout: 1500
+        }).show();
+    <% } %>
+</script>
+<!-- <script src="/js/chat_box.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.min.js"></script>
+<script src="/js/chat_engine.js"></script>
+<% if(locals.user) { %>
+    <script>
+        new chatEngine('user-chat-box', '<%=locals.user.name%>')
+    </script>
+<% } %>
+</html>

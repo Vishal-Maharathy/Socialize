@@ -1,0 +1,83 @@
+header {
+  background-color: #292929e8;
+  padding: .4vw;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1; }
+  header #header {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px; }
+    header #header #title-image {
+      height: 5vh;
+      width: 26vh; }
+    header #header a {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 1.6vw;
+      color: #8e27c5; }
+      header #header a:hover {
+        color: #7819ab; }
+    header #header .notification {
+      background-color: #555;
+      color: wrgb(13, 185, 183);
+      text-decoration: none;
+      padding: 5px 16px;
+      position: relative;
+      display: inline-block;
+      border-radius: 2px;
+      margin-right: 20px; }
+    header #header .notification:hover {
+      background: #454040; }
+    header #header .notification .badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      padding: 2px 7px;
+      border-radius: 50%;
+      background: red;
+      color: white;
+      font-size: 2.6vh; }
+    header #header p {
+      margin: 0;
+      padding: 0;
+      font-size: 2.3vh;
+      text-align: left; }
+      header #header p a {
+        font-weight: bold;
+        font-size: 2.1vh;
+        color: black; }
+    header #header #acceptRejectPanel a {
+      font-weight: bold;
+      font-size: 2.1vh;
+      color: black; }
+    header #header #acceptRejectPanel a:hover {
+      font-weight: bold;
+      font-size: 2.1vh;
+      color: #795050;
+      border-bottom: 1px solid black; }
+    header #header #PendingClearPanel a {
+      font-weight: bold;
+      font-size: 2.1vh;
+      color: red; }
+    header #header #PendingClearPanel a:hover {
+      font-weight: bold;
+      font-size: 2.1vh;
+      color: #795050;
+      border-bottom: 1px solid black; }
+  header #notification-box {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    background-color: grey;
+    right: 40px;
+    top: 40px;
+    visibility: hidden;
+    transition: .3s ease-out;
+    overflow: scroll;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 2vh; }
+  header ::-webkit-scrollbar-corner {
+    background-color: transparent; }

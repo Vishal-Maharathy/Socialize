@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SignedUp!</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/home_style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    </head>
+    <body>
+       <h1>YOU HAVE BEEN SIGNED UP |:)</h1>
+       <button><a href="/">Home!</a></button>
+    </body>
+    <script>
+            <% if (flash.success && flash.success.length > 0) { %>
+                new Noty({
+                    theme: 'relax',
+                    text: '<%= flash.success %>',
+                    type: 'success',
+                    layout: 'topRight',
+                    timeout: 1500
+                }).show();
+            <% } %>
+    </script>
+</html>

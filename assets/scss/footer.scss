@@ -1,0 +1,17 @@
+footer{
+    margin-top: 1vh;
+    background-color: #393939;
+    padding: .4vw;
+    #footer{
+        #logo_text{
+            font-family:sans-serif;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+        }
+    }
+    a{
+        display: inline-block;
+        text-decoration: none; 
+        color: #17aba4;
+     }
+}

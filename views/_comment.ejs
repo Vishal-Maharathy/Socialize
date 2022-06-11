@@ -1,0 +1,42 @@
+
+<!-- for displaying comments THIS ONE IS MODIFIED AOBVE IS ORIGNIAL -->
+<div class="post-comments-list">
+    <span class="comment-title"> Comments:</span>
+    <ul id="post-comments-<%= post.id %>">
+        <% for(comment of post.comments){ %>
+            <!-- this below div is there so that we have the comment id for which this whole div will be removed(deleting a comment) -->
+            <div id="comment-<%= comment._id %>">
+                <span class="commenter"><%= comment.user.name %></span><span class="comment-content">: <%= comment.content %></span><br>
+
+                <!-- adding comment Attachment -->
+                <% if(comment.commentImage){%>
+                <div id="commentAttach">
+                    <img src="<%=comment.commentImage%>" alt="Attachment">
+                </div>
+                <%}%>
+                <% if(locals.user){ %>
+                    <!-- for adding likes button and count -->
+                    <span id="likes">
+                        Likes
+                    </span>
+                    <a href="/likes/toggle?type=Comment&id=<%=comment._id%>" class="create-like" style="text-decoration: none;">
+                        <%=comment.likes.length%>
+                    </a>
+                    <% if(locals.user && locals.user.id==comment.user.id){ %>
+                        <small>
+                            <a class="edit-delete-comment" href="comments/destroy/<%= comment.id %>">Remove</a><br>
+                        </small>
+                    <% } %>    
+                <% } else { %>
+                    <!-- if the user is logged out then display only count -->
+                    <span id="likes">
+                        Likes <%=comment.likes.length%>
+                        <!-- Bruh -->
+                    </span>
+                    <% } %>
+                <!-- adding border after every comment -->
+                <div id="border"></div>
+            </div>
+        <% } %>
+    </ul>
+</div>

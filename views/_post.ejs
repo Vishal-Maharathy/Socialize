@@ -1,0 +1,64 @@
+<ul id="post-<%= post._id %>">
+    <div class="box">
+        <div class="avatar-info">
+            <div class="post-avatar">
+                <% if (!post.user.avatar){ %>
+                        <img src="/uploads/users/avatars/profilepic.png" alt="profile pic">
+                    <% }else{ %>
+                        <img src="<%=post.user.avatar%>" alt="profile pic">
+                <% } %>
+            </div>
+            <div class="username-datetime">
+                <div class="avatar-name-post">
+                    <a href="/users/profile/<%=post.user._id%>" style="text-decoration: none;">
+                        <small class="post-user-name"><%= post.user.name %></small>
+                    </a>
+                </div>
+                <div class="post-datetime">
+                    <%= post.createdDate%> at <%=post.createdTime%>
+                </div>
+            </div>            
+           
+        </div>
+        <p id="post-content"><%= post.content %></p>
+        <%if(post.postImage) {%>
+            <div class="post-Image-Container">
+                <img src="<%=post.postImage%>" alt="Attahcment" class="post-attachment">
+            </div>
+        <%}%>
+    </div>
+    <span>
+        <a class="likeToggle" href="/likes/popupToggle?type=Post&id=<%=post._id%>">Likes</a>
+    </span>
+    <% if(locals.user){ %>
+        <a href="/likes/toggle?type=Post&id=<%=post._id%>" class="create-like" style="text-decoration: none;">
+            <%=post.likes.length%>
+        </a>
+        <% if(locals.user && locals.user.id==post.user.id){ %>
+        <small>
+            <!-- delete-post-button from tutorial for ajax -->
+            <a class="edit-delete-post" href="posts/destroy/<%= post.id %>">Delete Post</a>
+        </small>
+        <% } %>
+        <!-- when the user is not signed in, it will just show likes and not a link to like -->
+    <% } else { %>
+    <span style="color: rgb(175, 159, 159);">
+        <%=post.likes.length%>
+        <!-- Bruh -->
+    </span>
+    <% } %>
+    
+    <!-- creating comments -->
+    <div class="post-comments">
+        <% if(locals.user){ %>
+            <form id="post-<%=post._id %>-comments-form" action="/comments/create" method="post" enctype="multipart/form-data">
+                <input type="text" name="content" placeholder="Write a comment..." required><br>
+                <label id="upload-comment" for="upload-comment-post"><img src="../uploads/images/uploadImage.png" alt="Image"></label>
+                <input type="file" name="commentImage" id="upload-comment-post">
+                <input type="hidden" name="post" value="<%= post._id %>">
+                <input type="submit" value="Post">
+            </form>
+        <% } %>
+    </div>
+    <%- include('_comment.ejs') -%>
+</ul>
