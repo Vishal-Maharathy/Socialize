@@ -42,7 +42,7 @@
 module.exports.chatSockets = function(socketServer){
     let io = require('socket.io')(socketServer, {
         cors: {
-            origin: 'http://localhost:8000',
+            origin: 'http://34.221.48.198:8000',
             } 
     });
     io.on('connection', function(socket){
@@ -56,7 +56,6 @@ module.exports.chatSockets = function(socketServer){
             io.in(data.chatroom).emit('user_joined', data.user_name)
         })
         socket.on('send_message', function(data){
-            console.log("dkjnbfskid")
             io.in(data.chatRoom).emit('recieve_message', data);
         })
     })
