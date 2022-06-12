@@ -5,16 +5,18 @@
     <title>
         Sign In!
     </title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/home_style.css">
+    <link rel="stylesheet" href="css/signin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <%- include('_header') %>
-        <h2 id="heading">SignIn to connect with the world</h2>
+        <div id="heading">
+            SignIn to connect with the free world!
+        </div>
         <div id="loginupForm">
             <form action="/succsign" method="post">
                 <input type="email" name="email" placeholder="Your E-mail" required><br>

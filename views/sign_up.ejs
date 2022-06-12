@@ -4,15 +4,17 @@
         <title>
             Sign Up!
         </title>
-        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/home_style.css">
+        <link rel="stylesheet" href="css/signin.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body style="text-align: center; font-family: sans-serif;">
+    <body>
         <%- include('_header') %>
-        <h2 id="heading">Join others</h2>
+        <div id="heading">
+            Sign Up to Join Others!
+        </div>
         <div id="loginupForm">
             <form action="/create" method="post">
                 <input type="text" name="name" placeholder="Your Name" required><br>

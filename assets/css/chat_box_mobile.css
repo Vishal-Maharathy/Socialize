@@ -49,7 +49,7 @@
       #user-chat-box #chat-messages-list .self-message span {
         height: auto;
         width: inherit;
-        border-radius: 15px 15px 15px 5px;
+        border-radius: 15px 15px 5px 15px;
         display: inline-block;
         padding: 15px;
         background-color: #2a82cf; }

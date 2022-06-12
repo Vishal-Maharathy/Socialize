@@ -42,15 +42,22 @@
         let notifDiv = $('#notification-box');
         let notifButton = $('#notification-toggle');
         notifButton.click(function(e){
+            var x = window.matchMedia("(max-width: 750px)") 
             if(notifDiv[0].style.visibility == 'visible'){
                 notifDiv[0].style.visibility = 'hidden'
                 notifDiv[0].style.height = '1px'
                 notifDiv[0].style.width = '1px'
                 notifDiv[0].style.transition = '.3s ease-out'
             }else{
+                if(x.matches){
+                    notifDiv[0].style.height = '30vh'
+                    notifDiv[0].style.width = '50vw'
+                }
+                else{
+                    notifDiv[0].style.height = '30vh'
+                    notifDiv[0].style.width = '60vh'
+                }
                 notifDiv[0].style.visibility = 'visible'
-                notifDiv[0].style.height = '30vh'
-                notifDiv[0].style.width = '60vh'
                 notifDiv[0].style.transition = '.3s ease-out'
             }
             e.preventDefault();

@@ -1,0 +1,181 @@
+::-webkit-scrollbar {
+    width: 10px;
+  }
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-track:hover {
+  background: rgba(83, 83, 83, 0.1); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(58, 57, 57); 
+  border-radius: 50px;
+
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+body{
+    margin: 0;
+    margin-top: 60px;
+    padding: 0;
+    background-color: #1c1d20;
+    font-family: sans-serif;
+    // font-size: 3vh;
+    #heading{
+        display: inline-block;
+        color: #550080;
+        font-size: 33px;
+        font-family: monospace;
+        font-weight: bold;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-top: 40px;
+    }
+    #loginupForm{
+        background-color: #242526;
+        width: 400px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-top: 100px;
+        border-radius: 15px;
+        padding: 34px;
+        text-align: center;
+        box-shadow: rgba(193, 9, 244, 0.25) 0px 25px 50px -12px;
+        input{
+            font-size:20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #3a3b3c;
+            color: #8e27c5;
+            margin-top: 20px;
+            transition-duration: 0.1s;
+            border: none;
+            outline: none;
+        }
+        input:hover{
+            padding: 12px;
+        }
+        ::placeholder{
+            color: #898784;
+            font-size: 15px;
+            font-weight: lighter;
+        }
+        form{
+            color: #757599;
+            width: 100%;
+            text-align: center;
+        }
+
+    }
+    #bottomOptionsLogin{
+        background-color: #242526;
+        padding: 1px 25px;
+        display: flex;
+        width: 50%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        justify-content: space-between;
+        margin-top: 15vh;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        a{
+            text-decoration: none;
+            font-size: 3vh;
+            transition-duration: .2s
+        }
+        a:visited{
+            color: #757599;
+        }
+        a:hover{
+            font-size: 3.2vh;
+            color: #8e27c5;
+        }
+    }
+}
+
+@media screen and (max-width: 750px){
+    body{
+        margin: 0;
+        margin-top: 60px;
+        padding: 0;
+        background-color: #1c1d20;
+        font-family: sans-serif;
+        // font-size: 3vh;
+        #heading{
+            display: inline-block;
+            color: #550080;
+            font-size: 26px;
+            font-family: monospace;
+            font-weight: bold;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            margin-top: 40px;
+        }
+        #loginupForm{
+            background-color: #242526;
+            width: 60vw;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            margin-top: 100px;
+            border-radius: 15px;
+            padding: 34px;
+            text-align: center;
+            box-shadow: rgba(193, 9, 244, 0.25) 0px 25px 50px -12px;
+            input{
+                font-size:13px;
+                padding: 10px;
+                border-radius: 5px;
+                background-color: #3a3b3c;
+                color: #8e27c5;
+                margin-top: 20px;
+                transition-duration: 0.1s;
+                border: none;
+                outline: none;
+            }
+            input:hover{
+                padding: 12px;
+            }
+            ::placeholder{
+                color: #898784;
+                font-size: 15px;
+                font-weight: lighter;
+            }
+            form{
+                color: #757599;
+                width: 100%;
+                text-align: center;
+            }
+    
+        }
+        #bottomOptionsLogin{
+            background-color: #242526;
+            padding: 1px 25px;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            justify-content: space-between;
+            margin-top: 15vh;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            a{
+                text-decoration: none;
+                font-size: 16px;
+                transition-duration: .2s
+            }
+            a:visited{
+                text-decoration: none;
+            }
+            a:hover{
+                font-size: 17px;
+                color: #8e27c5;
+            }
+        }
+    }    
+}

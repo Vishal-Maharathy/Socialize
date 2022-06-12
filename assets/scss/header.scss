@@ -98,5 +98,10 @@ header{
         padding: 10px;
         font-size: 2vh;
     }
+    .container {
+      display: none;
+    }
     ::-webkit-scrollbar-corner {background-color: transparent;}
+    @media screen and (max-width: 750px){
+    }
 }

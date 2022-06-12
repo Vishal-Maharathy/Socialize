@@ -79,5 +79,7 @@ header {
     border-radius: 20px;
     padding: 10px;
     font-size: 2vh; }
+  header .container {
+    display: none; }
   header ::-webkit-scrollbar-corner {
     background-color: transparent; }

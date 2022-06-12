@@ -11,30 +11,21 @@
                 <p style="display: inline-block; color: #8206e8;">|</p>
                 <a href="signup">SignUp</a>
             </div>
-            <% } %>
-            <% if(locals.user){ %>
-                <div>
-                    <!-- from here we will load notifications in a small div -->
-                    <a href="/notifications/<%=user.id %>" class="notification" id="notification-toggle">
-                        <span>Inbox</span>
-                        <span class="badge"><%=no_of_notif%></span>
-                    </a>
-                    <a href="/users/profile/<%= user.id %>">Profile</a>
-                </div>
-            <% } %>
+        <% } %>
+        <% if(locals.user){ %>
+            <div>
+                <!-- from here we will load notifications in a small div -->
+                <a href="/notifications/<%=user.id %>" class="notification" id="notification-toggle">
+                    <span>Inbox</span>
+                    <span class="badge"><%=no_of_notif%></span>
+                </a>
+                <a href="/users/profile/<%= user.id %>">Profile</a>
+            </div>
             <div id="notification-box">
                 <h2>Notifications</h2>
-                <!-- <div>First</div>
-                <div>First</div>
-                <div>First</div>
-                <div>First</div>
-                <div>First</div>
-                <div>First</div>
-                <div>First</div>
-                <div>First</div> -->
-            </div>  
+            </div> 
+        <% } %>
     </div>
-
 </header>
 <script src="/js/notification.js"></script>
 
