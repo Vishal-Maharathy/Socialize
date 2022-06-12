@@ -97,8 +97,8 @@ class chatEngine{
         else{
             chatBox[0].style.visibility = "visible"
             if(x.matches){
-                chatBox[0].style.height = '63vh'
-                chatBox[0].style.width = '80vw'
+                chatBox[0].style.height = '60vh'
+                chatBox[0].style.width = '87vw'
             }
             else{
                 chatBox[0].style.height = '600px'
