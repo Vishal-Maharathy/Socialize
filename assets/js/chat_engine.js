@@ -4,7 +4,7 @@ class chatEngine{
     constructor(chatBoxId, userName){
         this.chatBox = $(`#${chatBoxId}`)
         this.userName = userName
-        this.socket = io('http://34.221.48.198:5000')
+        this.socket = io('http://44.238.38.106:5000')
         if(this.userName){
             this.connectionHandler()
         }
