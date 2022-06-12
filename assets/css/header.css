@@ -10,12 +10,12 @@ header {
     justify-content: space-between;
     margin-right: 20px; }
     header #header #title-image {
-      height: 5vh;
-      width: 26vh; }
+      height: 32px;
+      width: 162px; }
     header #header a {
       display: inline-block;
       text-decoration: none;
-      font-size: 1.6vw;
+      font-size: 20px;
       color: #8e27c5; }
       header #header a:hover {
         color: #7819ab; }
@@ -38,7 +38,7 @@ header {
       border-radius: 50%;
       background: red;
       color: white;
-      font-size: 2.6vh; }
+      font-size: 15px; }
     header #header p {
       margin: 0;
       padding: 0;

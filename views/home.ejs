@@ -1,31 +1,32 @@
 <section id="feed-posts">
     <div id="make-post">
         <% if(locals.user){ %>
-            <% if (!locals.user.avatar){ %>
-                <div id="profile_pic">
-                    <img src="/uploads/users/avatars/profilepic.png" alt="profile pic" class="avatar_pic">
-                </div>
-            <% }else{ %>
-                <div id="profile_pic">
-                    <img src="<%=locals.user.avatar%>" alt="profile pic" class="avatar_pic">
-                </div>
-            <% } %>
-            <form action="/posts/create" enctype="multipart/form-data" method="post" id="new-post-form">
-                <textarea id="text_area" name="content" cols="65%" rows="10" placeholder="What's on your mind?" required></textarea><br>
-                <label id="upload-post" for="upload-post-input"><img src="../uploads/images/uploadImage.png" alt="Image"></label>
-                <input id="upload-post-input" type="file" name="postAttachment">
-                <input type="submit" value="Post" id="post_form_button">
-            </form>
-            <% } %>
-            
+            <div id="post-form-left">
+                <% if (!locals.user.avatar){ %>
+                    <div id="profile_pic">
+                        <img src="/uploads/users/avatars/profilepic.png" alt="profile pic" class="avatar_pic">
+                    </div>
+                <% }else{ %>
+                    <div id="profile_pic">
+                        <img src="<%=locals.user.avatar%>" alt="profile pic" class="avatar_pic">
+                    </div>
+                <% } %>
+            </div>
+            <div id="post-form-right">
+                <form action="/posts/create" enctype="multipart/form-data" method="post" id="new-post-form">
+                    <textarea id="text_area" name="content" cols="65%" rows="10" placeholder="What's on your mind?" required></textarea><br>
+                    <label id="upload-post" for="upload-post-input"><img src="../uploads/images/uploadImage.png" alt="Image"></label>
+                    <input id="upload-post-input" type="file" name="postAttachment">
+                    <input type="submit" value="Post" id="post_form_button">
+                </form>
+            </div>
+        <% } %>    
     </div>
     <h4 id="posts">Posts</h4>
     <div id="posts-list-container">
-        <ul>
             <%for(post of posts){%>
                 <%- include('_post.ejs') %>
             <%}%>
-        </ul>
         
     </div>
 </section>

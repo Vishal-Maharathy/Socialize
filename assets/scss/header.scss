@@ -9,19 +9,14 @@ header{
         display: flex;
         justify-content: space-between;
         margin-right: 20px;
-        // #logo_text{
-        //     font-family:monospace;
-        //     font-weight: bold;
-        //     color: rgb(15, 201, 199);
-        // }
         #title-image{
-          height: 5vh;
-          width: 26vh;
+          height: 32px;
+          width: 162px;
         }
         a{
             display: inline-block;
             text-decoration: none; 
-            font-size: 1.6vw;
+            font-size: 20px;
             color: #8e27c5;
             &:hover{
                 color: #7819ab;
@@ -48,7 +43,7 @@ header{
           border-radius: 50%;
           background: red;
           color: white;
-          font-size: 2.6vh;
+          font-size: 15px;
           // visibility: hidden;
         }
         p{
