@@ -42,7 +42,7 @@
 module.exports.chatSockets = function(socketServer){
     let io = require('socket.io')(socketServer, {
         cors: {
-            origin: 'http://34.221.48.198:8000',
+            origin: 'http://44.238.38.106:8000',
             } 
     });
     io.on('connection', function(socket){
