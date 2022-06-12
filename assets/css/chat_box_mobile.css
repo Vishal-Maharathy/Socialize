@@ -1,0 +1,82 @@
+#user-chat-box {
+  visibility: hidden;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border: 1px solid grey;
+  height: 0px;
+  width: 0px;
+  background: #393c47;
+  padding: 5px;
+  transition: .5s;
+  border-radius: 5px; }
+  #user-chat-box ::-webkit-scrollbar {
+    display: none; }
+  #user-chat-box #chat-title {
+    padding: 5px;
+    background-color: #464a4e;
+    color: #b9b4b4;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    border-radius: 3px; }
+  #user-chat-box #chat-subtitle {
+    font-size: 9px;
+    color: #656565; }
+  #user-chat-box #chat-messages-list {
+    list-style: none;
+    padding: 10px;
+    height: 68%;
+    overflow: auto; }
+    #user-chat-box #chat-messages-list .other-message {
+      text-align: left;
+      padding: 5px;
+      color: #acc2d4;
+      font-size: 2.3vh; }
+      #user-chat-box #chat-messages-list .other-message span {
+        height: auto;
+        width: inherit;
+        border-radius: 15px 15px 15px 5px;
+        display: inline-block;
+        padding: 15px;
+        background-color: #464955; }
+    #user-chat-box #chat-messages-list .self-message {
+      text-align: right;
+      padding: 5px;
+      color: #acc2d4;
+      font-size: 2.3vh; }
+      #user-chat-box #chat-messages-list .self-message span {
+        height: auto;
+        width: inherit;
+        border-radius: 15px 15px 15px 5px;
+        display: inline-block;
+        padding: 15px;
+        background-color: #2a82cf; }
+  #user-chat-box #chat-message-input-container {
+    height: 24%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row; }
+    #user-chat-box #chat-message-input-container #chat-message-input {
+      background-color: #464955;
+      border: none;
+      border-radius: 15px;
+      padding: 0 15px;
+      height: 40%;
+      width: 55%;
+      transition-duration: .3s;
+      color: white; }
+    #user-chat-box #chat-message-input-container #chat-message-input:focus {
+      outline: 3px #2a82cf solid;
+      height: 50%;
+      width: 60%; }
+    #user-chat-box #chat-message-input-container #send-message {
+      height: 40%;
+      width: 31%;
+      font-size: 2vh;
+      border-radius: 20px;
+      color: white;
+      border: none;
+      background: #58d258; }

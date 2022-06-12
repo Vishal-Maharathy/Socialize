@@ -383,3 +383,5 @@ body {
     body #bottomOptionsLogin a:hover {
       font-size: 3.2vh;
       color: #8e27c5; }
+  body #mobile-chat {
+    display: hidden; }

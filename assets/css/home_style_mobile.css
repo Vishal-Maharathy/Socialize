@@ -74,7 +74,7 @@ body {
         padding: 10px;
         border-radius: 10px;
         justify-content: space-around;
-        height: 120px; }
+        height: 158px; }
         body #home-layout #layout-main #make-post #post-form-left {
           display: flex;
           width: 106px;
@@ -91,15 +91,14 @@ body {
           width: 264px;
           max-width: 270px; }
           body #home-layout #layout-main #make-post #post-form-right #new-post-form {
-            max-height: 80%;
-            margin-top: 20px; }
+            max-height: 80%; }
             body #home-layout #layout-main #make-post #post-form-right #new-post-form #text_area {
               background-color: transparent;
               border: none;
               font-family: sans-serif;
               color: #dcd8d8;
               font-size: 20px;
-              height: 6vw;
+              height: 100px;
               width: 100%;
               resize: none; }
               body #home-layout #layout-main #make-post #post-form-right #new-post-form #text_area ::placeholder {
@@ -387,3 +386,12 @@ body {
     body #bottomOptionsLogin a:hover {
       font-size: 3.2vh;
       color: #8e27c5; }
+  body #mobile-chat {
+    display: inline;
+    position: fixed;
+    bottom: 20px;
+    left: 10px;
+    z-index: 10; }
+    body #mobile-chat img {
+      height: 37px;
+      width: auto; }

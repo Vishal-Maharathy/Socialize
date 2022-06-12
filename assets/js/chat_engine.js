@@ -65,8 +65,8 @@ class chatEngine{
 }
 
 {
-    let messengerOptions = $('#chat-options')
-    messengerOptions[0].addEventListener('click', function(e){
+    let floatingChat = $('#mobile-chat')
+    floatingChat[0].addEventListener('click', function(e){
         // then make the div visible
         let chatBox = $(`#user-chat-box`)
         if(chatBox[0].style.visibility=='visible'){
@@ -76,12 +76,38 @@ class chatEngine{
         }
         else{
             chatBox[0].style.visibility = "visible"
-            chatBox[0].style.height = '600px'
-            chatBox[0].style.width = '600px'
+            chatBox[0].style.height = '80vh'
+            chatBox[0].style.width = '60vw'
+            
         }
     })
 }
-
+// for mobile
+{
+    let messengerOptions = $('#chat-options')
+    messengerOptions[0].addEventListener('click', function(e){
+        // then make the div visible
+        let chatBox = $(`#user-chat-box`)
+        let x = window.matchMedia("(max-width: 750px)")
+        if(chatBox[0].style.visibility=='visible'){
+            chatBox[0].style.visibility = 'hidden'
+            chatBox[0].style.height = '0px'
+            chatBox[0].style.width = '0px'
+        }
+        else{
+            chatBox[0].style.visibility = "visible"
+            if(x.matches){
+                chatBox[0].style.height = '63vh'
+                chatBox[0].style.width = '80vw'
+            }
+            else{
+                chatBox[0].style.height = '600px'
+                chatBox[0].style.width = '600px'
+            }
+            
+        }
+    })
+}
 
 // // using ajax i can recieve the room name and here i can pass the room name to the server{just an example}
 // // let chat_Engine = function(roomName){
