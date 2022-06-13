@@ -47,7 +47,6 @@ module.exports.update = async function(req, res){
             User.uploadedAvatar(req, res, function(err){
                if(err){console.log("----Multer Error: ", err);}
                user.name = req.body.name;
-               user.email = req.body.email;
                if(req.file){
                 // this is saving the path of the uploaded file in the avatar path
                    user.avatar = User.avatarPath + '/' + req.file.filename;

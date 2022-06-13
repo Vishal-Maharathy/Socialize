@@ -1,87 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-            background-color: #00a46d;
-            height: 100vh;
-        }
-        h1{
-            font-weight: bolder;
-            font-family: sans-serif;
-            text-align: center;
-            padding: 0;
-            margin: 0;
-            margin-bottom: 2vh;
-        }
-        p{
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            font-size: larger;
-            font-family: sans-serif;
-            font-weight: 400;
-        }
-        #update-form{
-            text-align: center;
-        }
-        #update-form input{
-            display: block;
-            margin-left: 50%;
-            transform: translateX(-50%);
-            margin-top: 3vh;
-            margin-bottom: 3vh;
-            background-color: beige;
-            border: none;
-            padding: 5px;
-            font-family: sans-serif;
-            font-size: large;
-        }
-        #details{
-            text-align: center;
-        }
-    </style>
     <head>
         <title>Profile!</title>
         <link rel="icon" type="image/x-icon" href="/uploads/images/S.png">
+        <!-- <link rel="stylesheet" href="/css/user_profile.css"> -->
+
+        <link rel="stylesheet" media="screen and (min-width: 750px)" href="/css/user_profile.css">
+        <link rel="stylesheet" media="screen and (max-width: 750px)" href="/css/user_profile_mobile.css">
         <link rel="stylesheet" href="/css/header.css">
-        <link rel="stylesheet" href="/css/home_style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+    <!-- for desktop -->
     <body>
         <%- include('_header') %>
-        <div id="details">
-            <div>
-                <% if(!profile_user.avatar) { %>
-                    <img src="/uploads/users/avatars/profilepic.png" alt="profile pic" height="140px" width="140px" style="border-radius: 50%; margin-top: 1vh;">
-                <% } else { %>
-                    <img src="<%=profile_user.avatar%>" alt="profile pic" height="140px" width="140px" style="border-radius: 50%;">
-                <% } %>    
+        <div id="desktop-profile">
+            <div id="top-div">
+                <div id="top-images">
+                    <img id="cover-image" src="/uploads/images/cover.jpg" alt="cover image"> 
+                </div>
+                <div id="top-middle">
+                    <div id="profile-pic">
+                        <% if(!profile_user.avatar) { %>
+                            <img src="/uploads/users/avatars/profilepic.png" alt="profile pic" height="140px" width="140px" style="border-radius: 50%;">
+                        <% } else { %>
+                            <img src="<%=profile_user.avatar%>" alt="profile pic" height="140px" width="140px" style="border-radius: 50%;">
+                        <% } %> 
+                    </div>
+                    <div id="name">
+                        <%=profile_user.name %>
+                    </div>  
+                    <% if(user.id == profile_user.id) { %>
+                        <div class="signoutfriendReq">
+                            <a href="/signout">Signout</a>
+                        </div>
+                    <% } %>
+                    <% if(user.id != profile_user.id && !isFriend && !requestSent){%>
+                        <div class="signoutfriendReq">
+                            <a href="/notifications/sendRequest/<%=person_id%>" id="send_request">Send Friend Request</a>
+                        </div>
+                    <%}%>
+                </div>
+                <div id="options-list">
+                    <div>
+                        <ul class="border-selected">
+                            <a href="">Posts</a>
+                        </ul>
+                        <% if(user.id == profile_user.id) { %>
+                            <ul id="update-button" data-userid="<%=profile_user.id%>"><a href="">Update</a></ul>
+                        <% } %>
+                        <ul class="border-selected"><a href="">Friends</a></ul>
+                    </div>
+                </div>
             </div>
-            <div>Name: <%=profile_user.name %></div>
-            <div>Email: <%=profile_user.email %></div>
+            <div id="bottom-content">
+            </div> 
         </div>
-       <% if(user.id == profile_user.id) { %>
-        <!-- show the form for updation of details -->
-        <p style="margin-top: 3vh;">Update</p>
-        <form action="/users/update/<%= profile_user.id %>" enctype="multipart/form-data" method="post" id="update-form">
-            <input type="text" name="name" placeholder="Your Name" value="<%= profile_user.name %>"  required>
-            <input type="email" name="email" placeholder="Your E-Mail" value="<%= profile_user.email %>"  required>
-            <span>Change/Add Profile Picture: </span><input type="file" name="avatar">
-            <input type="submit" value="Update">
-            <p><a href="/signout" style="text-decoration: none; color: #00a46d;">Sign Out</a></p>
-        </form> 
-        <% } %>
-        <% if(user.id != profile_user.id && !isFriend && !requestSent){%>
-            <a href="/notifications/sendRequest/<%=person_id%>" id="send_request">Send Friend Request</a>
-        <% }else{ %>
-            <a href="/signin" style="text-decoration: none; color: #00a46d;"></a>
-        <%}%>
-        
+
+        <div id="mobile-profile">
+            isdnfif
+            efiemfpo
+            gkel
+        </div>
     </body>
+
     <script>
         <% if (flash.success && flash.success.length > 0) { %>
             new Noty({
@@ -102,4 +86,5 @@
                 }).show();
         <% } %>
     </script>
+    <script src="/js/user_profile.js"></script>
 </html>

@@ -54,6 +54,7 @@ router.get('/chatLoad', chatController.loadChatEngine)
 //FOR DIFFERENT ROUTES
 router.use('/posts', require('./posts'))
 router.use('/comments', require('./comments'))
+router.use('/profilepage', require('./userProfile'))
 
 // if the address is like http://localhost:8000/api, then the website will get directed to the api folder..
 router.use('/api', require('./api'))
