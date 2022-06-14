@@ -297,7 +297,80 @@ body{
                     }
                 }
             }
-            
+            #friends-listbox{
+                // for screens greater than 540px
+                @media screen and (min-width:540px) {
+                    margin-top: 20px;
+                    width: 50%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-left: 50%;
+                    transform: translateX(-50%);
+                    justify-content: space-between;
+                    .friend-box{
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 40px;
+                        width: 150px;
+                        margin-right: 60px;
+                        img{
+                            height: 70px;
+                            object-fit: cover;
+                            margin-right: 20px;
+                            border-radius: 10px;
+                        }
+                        #name-field{
+                            position: relative;
+                            font-size: 25px;
+                            div{
+                                position: absolute;
+                                width: 160px;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                a{
+                                    text-decoration: none;
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+                // screens less than 540px
+                @media screen and (max-width:540px) {
+                    margin-top: 20px;
+                    width: 70%;
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 50% !important;
+                    transform: translateX(-50%);
+                    justify-content: space-between;
+                    align-items: center;
+                    .friend-box{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        align-items: center;
+                        padding: 14px;
+                        height: 130px;
+                        img{
+                            height: 70px;
+                            width: 70px;
+                            object-fit: cover;
+                            border-radius: 10px;
+                        }
+                        #name-field{
+                            position: relative;
+                            font-size: 18px;
+                            div{
+                                a{
+                                    text-decoration: none;
+                                    color: white;
+                                }
+                            }
+                        }
+                    }   
+                }
+            }
         }
     }
 }

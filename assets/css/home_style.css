@@ -79,6 +79,7 @@ body {
           width: 35%;
           min-width: 72px;
           max-width: 105px;
+          object-fit: cover;
           align-items: center;
           justify-items: center; }
           body #home-layout #layout-main #make-post #post-form-left #profile_pic {
