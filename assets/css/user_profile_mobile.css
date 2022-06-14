@@ -132,7 +132,8 @@ body {
       body #desktop-profile #bottom-content ul {
         margin-left: 50%;
         transform: translateX(-50%);
-        width: 60%; }
+        width: 100%;
+        padding: 0; }
         body #desktop-profile #bottom-content ul a {
           border-bottom: #3a3b3c solid 0px;
           transition-duration: .1s; }
