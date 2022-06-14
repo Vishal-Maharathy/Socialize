@@ -42,14 +42,18 @@ body {
         bottom: 10px;
         overflow-y: scroll; }
         body #home-layout #left #left-fixed .left-pane-options {
-          padding: 10px 30px;
+          padding: 12px 1px;
           background-color: inherit;
-          font-weight: bold;
-          border-radius: 10px;
-          color: #41cb28;
+          border-radius: 5px;
+          font-size: 20px;
+          color: #c5d0d6;
+          margin-bottom: 10px;
           cursor: pointer; }
+          body #home-layout #left #left-fixed .left-pane-options a {
+            text-decoration: none;
+            color: inherit; }
         body #home-layout #left #left-fixed .left-pane-options:hover {
-          background-color: #514f4f; }
+          background-color: #323337; }
         body #home-layout #left #left-fixed #messenger {
           position: relative; }
           body #home-layout #left #left-fixed #messenger ::-webkit-scrollbar-corner {
@@ -119,25 +123,29 @@ body {
           padding: 10px; }
         body #home-layout #right #right-fixed #users-on-platform ul {
           width: 80%;
-          border: solid 3px #5c5c5c;
-          border-radius: 5px;
+          border-radius: 3px;
           padding: 10px;
-          margin: 10px; }
+          margin: 10px;
+          transition-duration: .2s; }
           body #home-layout #right #right-fixed #users-on-platform ul img {
             height: 30px;
             width: auto;
             border-radius: 50%; }
+        body #home-layout #right #right-fixed #users-on-platform ul:hover {
+          background-color: #3e3e3e; }
         body #home-layout #right #right-fixed #friends-list .friends-display-content {
           text-decoration: none;
           color: #ffffff;
           padding: 10px; }
         body #home-layout #right #right-fixed #friends-list ul {
           width: 80%;
-          border: solid 3px #5c5c5c;
-          border-radius: 5px;
+          border-radius: 3px;
           padding: 10px;
           margin: 10px;
-          font-size: 18px; }
+          font-size: 18px;
+          transition-duration: .2s; }
+        body #home-layout #right #right-fixed #friends-list ul:hover {
+          background-color: #3e3e3e; }
       body #home-layout #right ::-webkit-scrollbar {
         display: none; }
       body #home-layout #right ::-webkit-scrollbar:active {

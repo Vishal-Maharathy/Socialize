@@ -46,15 +46,20 @@ body{
                 bottom: 10px;
                 overflow-y: scroll;
                 .left-pane-options{
-                    padding: 10px 30px;
+                    padding: 12px 1px;
                     background-color: inherit;
-                    font-weight: bold;
-                    border-radius: 10px;
-                    color: #41cb28;
+                    border-radius: 5px;
+                    font-size: 20px;
+                    color: #c5d0d6;
+                    margin-bottom: 10px;
                     cursor: pointer;
+                    a{
+                        text-decoration: none;
+                        color: inherit;
+                    }
                 }
                 .left-pane-options:hover{
-                    background-color: #514f4f;
+                    background-color: #323337;
                 }
                 #messenger{
                     position: relative;
@@ -147,10 +152,14 @@ body{
                             border-radius: 50%;
                         }
                         width: 80%;
-                        border: solid 3px #5c5c5c;
-                        border-radius: 5px;
+                        // border: solid 3px #5c5c5c;
+                        border-radius: 3px;
                         padding: 10px;
                         margin: 10px;
+                        transition-duration: .2s;
+                    }
+                    ul:hover{
+                        background-color: #3e3e3e;
                     }
                 }
                 #friends-list{
@@ -161,11 +170,15 @@ body{
                     }
                     ul{
                         width: 80%;
-                        border: solid 3px #5c5c5c;
-                        border-radius: 5px;
+                        // border: solid 3px #5c5c5c;
+                        border-radius: 3px;
                         padding: 10px;
                         margin: 10px;
                         font-size: 18px;
+                        transition-duration: .2s;
+                    }
+                    ul:hover{
+                        background-color: #3e3e3e;
                     }
                 }
             }
