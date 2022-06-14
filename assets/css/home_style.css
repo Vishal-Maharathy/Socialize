@@ -76,7 +76,8 @@ body {
         height: 120px; }
         body #home-layout #layout-main #make-post #post-form-left {
           display: flex;
-          width: 95px;
+          width: 35%;
+          min-width: 72px;
           max-width: 105px;
           align-items: center;
           justify-items: center; }
@@ -184,7 +185,7 @@ body {
     color: #dcd8d8;
     font-size: 20px;
     height: 4vw;
-    width: 35vw;
+    width: 95%;
     resize: none; }
     body #text_area ::placeholder {
       color: black; }
