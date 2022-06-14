@@ -124,6 +124,76 @@ body {
     transform: scale(1); }
   100% {
     transform: scale(0); } }
+      body #desktop-profile #bottom-content #post-content {
+        margin-left: 3rem; }
+      body #desktop-profile #bottom-content .likeToggle {
+        color: #92c221;
+        text-decoration: none;
+        cursor: pointer; }
+      body #desktop-profile #bottom-content ul {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        width: 60%; }
+        body #desktop-profile #bottom-content ul a {
+          border-bottom: #3a3b3c solid 0px;
+          transition-duration: .1s; }
+        body #desktop-profile #bottom-content ul a:hover {
+          border-bottom: #3a3b3c solid 1px; }
+        body #desktop-profile #bottom-content ul a:active {
+          color: inherit; }
+        body #desktop-profile #bottom-content ul #likes {
+          transition-duration: .1s; }
+      body #desktop-profile #bottom-content p {
+        margin: 0; }
+      body #desktop-profile #bottom-content #posts {
+        color: #bea7a7; }
+      body #desktop-profile #bottom-content #likes {
+        color: #979797; }
+      body #desktop-profile #bottom-content .box {
+        background-color: #131313;
+        color: #131313;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 45px -10px #8e27c5; }
+        body #desktop-profile #bottom-content .box .avatar-info {
+          display: flex;
+          height: 65px; }
+          body #desktop-profile #bottom-content .box .avatar-info .post-avatar {
+            height: 55px;
+            width: 55px; }
+            body #desktop-profile #bottom-content .box .avatar-info .post-avatar img {
+              height: 100%;
+              width: 100%;
+              border-radius: 50%; }
+          body #desktop-profile #bottom-content .box .avatar-info .username-datetime {
+            display: flex;
+            flex-direction: column;
+            margin-left: 5px; }
+            body #desktop-profile #bottom-content .box .avatar-info .username-datetime .post-user-name {
+              font-size: 25px;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              color: #d5d7d8; }
+            body #desktop-profile #bottom-content .box .avatar-info .username-datetime .post-datetime {
+              font-size: 14px;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              color: #6b6e6f; }
+        body #desktop-profile #bottom-content .box .post-Image-Container {
+          display: flex;
+          justify-content: space-around;
+          margin-top: 10px; }
+          body #desktop-profile #bottom-content .box .post-Image-Container .post-attachment {
+            border-radius: 10px;
+            outline: #6d6666 1px solid;
+            max-height: 60vh;
+            width: auto;
+            overflow: hidden; }
+        body #desktop-profile #bottom-content .box #post-content {
+          font-size: 19px;
+          color: silver; }
+      body #desktop-profile #bottom-content #border {
+        border-top: 1px solid #5d6160;
+        width: 100%;
+        margin: .5vw 4.2vw .5vw 0vw; }
       body #desktop-profile #bottom-content #updation-form {
         margin-left: 50%;
         transform: translateX(-50%); }

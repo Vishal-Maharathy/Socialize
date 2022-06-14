@@ -158,7 +158,102 @@ body{
             }
 
             //posts css
-
+            #post-content{
+              margin-left: 3rem;
+            }
+            .likeToggle{
+                color: #92c221;
+                text-decoration: none;
+                cursor:pointer;
+            }
+            // animation for likes
+            ul{
+              margin-left: 50%;
+              transform: translateX(-50%);
+              width: 60%;
+                a{
+                    border-bottom: #3a3b3c solid 0px;
+                    transition-duration: .1s;
+                }
+                a:hover{
+                    border-bottom: #3a3b3c solid 1px;
+                }
+                a:active{
+                    color: inherit;
+                }
+                #likes{
+                    transition-duration: .1s;
+                
+                }
+            }
+            p{
+                margin: 0;
+            }
+            #posts{
+                color: #bea7a7;
+            }
+            #likes{
+                color: #979797;
+            }
+            .box{
+                // border: .3vw solid #00a388 ;
+                // position: relative;
+                background-color: #131313;
+                color: #131313;
+                padding:20px;
+                border-radius: 10px;
+                box-shadow:  0 45px -10px #8e27c5;
+                .avatar-info{
+                    display: flex;
+                    height: 65px;
+                    .post-avatar{
+                        height: 55px;
+                        width: 55px;
+                        img{
+                            height: 100%;
+                            width: 100%;
+                            border-radius: 50%;
+                        }
+                    }
+                    .username-datetime{
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 5px;
+                        .post-user-name{
+                            font-size: 21px;
+                            // font-weight: bold; 
+                            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+                            color: rgb(213, 215, 216);
+                        }
+                        .post-datetime{
+                            font-size: 14px;
+                            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+                            color: rgb(107, 110, 111);
+                        }
+                    }            
+                }
+                .post-Image-Container{
+                    display: flex;
+                    justify-content: space-around;
+                    margin-top: 10px;
+                    .post-attachment{
+                        border-radius: 10px;
+                        outline: rgb(109, 102, 102) 1px solid;
+                        max-height: 60vh;
+                        width: auto;
+                        overflow: hidden;
+                    }
+                }
+                #post-content{
+                    font-size: 15px;
+                    color: silver;
+                }
+            }
+            #border{
+                border-top: 1px solid #5d6160;
+                width: 100%;
+                margin: .5vw 4.2vw .5vw 0vw;
+            }
 
             //  updation form css
             #updation-form{
