@@ -101,8 +101,8 @@ class chatEngine{
                 chatBox[0].style.width = '87vw'
             }
             else{
-                chatBox[0].style.height = '600px'
-                chatBox[0].style.width = '600px'
+                chatBox[0].style.height = '497px'
+                chatBox[0].style.width = '408px'
             }
             
         }
