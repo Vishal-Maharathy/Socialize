@@ -109,20 +109,54 @@
     catch(err){}
 
     let postsButton = $('#posts-button')
-    postsButton[0].addEventListener('click', function(event){
-        event.preventDefault()
-        let container = $('#bottom-content')
-        container[0].innerHTML = loadingDiv
-        $.ajax({
-            type: 'post',
-            url: '/profilepage/loadPosts',
-            data: {'id': postsButton[0].dataset.userid},
-            success: (data)=>{
-                container[0].innerHTML = ""
-                for(post of data.posts){
-                    container[0].innerHTML += postDiv(post)
+    try{
+        postsButton[0].addEventListener('click', function(event){
+            event.preventDefault()
+            let container = $('#bottom-content')
+            container[0].innerHTML = loadingDiv
+            $.ajax({
+                type: 'post',
+                url: '/profilepage/loadPosts',
+                data: {'id': postsButton[0].dataset.userid},
+                success: (data)=>{
+                    container[0].innerHTML = ""
+                    for(post of data.posts){
+                        container[0].innerHTML += postDiv(post)
+                    }
                 }
-            }
-        })
-    })   
+            })
+        })  
+    }
+    catch(err){}
+    
+    let friendsDiv = function(friend){
+        return `
+            <div class="friend-box">
+                <img src="${friend.avatar}" alt="Image">
+                <div id="name-field"><div><a href="/users/profile/${friend._id}">${friend.name}</a></div></div>
+            </div>                    
+        `
+    }
+
+    let friendsButton = $('#friends-list')
+    try{
+        friendsButton[0].addEventListener('click', function(event){
+            event.preventDefault()
+            let container = $('#bottom-content')
+            container[0].innerHTML = loadingDiv
+            $.ajax({
+                type: 'post',
+                url: '/profilepage/loadFriends',
+                data: {'id': friendsButton[0].dataset.userid},
+                success: (data)=>{
+                    container[0].innerHTML = `<div id="friends-listbox"></div>`
+                    let innerContainer = $('#friends-listbox')
+                    for(friend of data.friends){
+                        innerContainer[0].innerHTML += friendsDiv(friend)
+                    }
+                }
+            })
+        })  
+    }
+    catch(err){}
 }

@@ -51,19 +51,14 @@
                         <% if(user.id == profile_user.id) { %>
                             <ul id="update-button" data-userid="<%=profile_user.id%>"><a href="">Update</a></ul>
                         <% } %>
-                        <ul class="border-selected"><a href="">Friends</a></ul>
+                        <ul id="friends-list" class="border-selected" data-userid="<%=profile_user.id%>"><a href="">Friends</a></ul>
                     </div>
                 </div>
             </div>
             <div id="bottom-content">
-                
+                <div id="friends-listbox">
+                </div>
             </div> 
-        </div>
-
-        <div id="mobile-profile">
-            isdnfif
-            efiemfpo
-            gkel
         </div>
     </body>
 

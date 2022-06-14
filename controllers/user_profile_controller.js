@@ -28,3 +28,11 @@ module.exports.getPosts = async function(req, res){
         posts: posts
     })
 }
+
+module.exports.getFriends = async function(req, res){
+    let user = await User.findById(req.body.id)
+            .populate('friendShip')
+    return res.json(200, {
+        friends: user.friendShip
+    })
+}

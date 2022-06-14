@@ -37,12 +37,12 @@ body{
                     img{
                         border: solid #242526 5px;
                         height: 170px;
-                        width: auto;
+                        object-fit: cover;
                     }
                 }
                 #name{
                     position: absolute;
-                    margin-left: 216px;
+                    margin-left: 225px;
                     margin-top: 22px;
                     font-size: 30px;
                     font-weight: bold;
@@ -255,7 +255,6 @@ body{
                 width: 100%;
                 margin: .5vw 4.2vw .5vw 0vw;
             }
-
             //  updation form css
             #updation-form{
                 margin-left: 50%;
@@ -293,6 +292,41 @@ body{
                         color: #757599;
                         width: 100%;
                         text-align: center;
+                    }
+                }
+            }
+            #friends-listbox{
+                margin-top: 20px;
+                width: 50%;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 50%;
+                transform: translateX(-50%);
+                justify-content: space-between;
+                .friend-box{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 40px;
+                    width: 150px;
+                    margin-right: 60px;
+                    img{
+                        height: 70px;
+                        object-fit: cover;
+                        margin-right: 20px;
+                    }
+                    #name-field{
+                        position: relative;
+                        font-size: 25px;
+                        div{
+                            position: absolute;
+                            width: 160px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            a{
+                                text-decoration: none;
+                                color: white;
+                            }
+                        }
                     }
                 }
             }
