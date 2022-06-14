@@ -86,23 +86,27 @@
                     </div>
     `
 
-
+    
+    
     let updateButton = $('#update-button')
     // access user defined values in div using this syntax .dataset.nameofvalue
     // updateButton[0].dataset.userid
-    updateButton[0].addEventListener('click',(e)=>{
-        e.preventDefault();
-        let container = $('#bottom-content')
-        container[0].innerHTML = loadingDiv
-        $.ajax({
-            type: 'post',
-            url: '/profilepage/updatedetails',
-            data: {'id': updateButton[0].dataset.userid},
-            success: function(data){
-                container[0].innerHTML = updateFormDiv(data);
-            }
+    try{
+        updateButton[0].addEventListener('click',(e)=>{
+            e.preventDefault();
+            let container = $('#bottom-content')
+            container[0].innerHTML = loadingDiv
+            $.ajax({
+                type: 'post',
+                url: '/profilepage/updatedetails',
+                data: {'id': updateButton[0].dataset.userid},
+                success: function(data){
+                    container[0].innerHTML = updateFormDiv(data);
+                }
+            })
         })
-    })
+    }
+    catch(err){}
 
     let postsButton = $('#posts-button')
     postsButton[0].addEventListener('click', function(event){
@@ -120,7 +124,5 @@
                 }
             }
         })
-    })
-
-
+    })   
 }
