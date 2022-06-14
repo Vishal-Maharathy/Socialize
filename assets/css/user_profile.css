@@ -33,10 +33,10 @@ body {
         body #desktop-profile #top-div #top-middle #profile-pic img {
           border: solid #242526 5px;
           height: 170px;
-          width: auto; }
+          object-fit: cover; }
       body #desktop-profile #top-div #top-middle #name {
         position: absolute;
-        margin-left: 216px;
+        margin-left: 225px;
         margin-top: 22px;
         font-size: 30px;
         font-weight: bold;
