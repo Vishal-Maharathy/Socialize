@@ -129,10 +129,21 @@
     }
     catch(err){}
     
+    let ifAvatar = function(friend){
+        if(friend.avatar){
+            return `<img src="${friend.avatar}" alt="Image">`
+        }
+        else{
+            return `
+            <img src="/uploads/users/avatars/profilepic.png" alt="Image"></img>
+            `
+        }
+    }
+
     let friendsDiv = function(friend){
         return `
             <div class="friend-box">
-                <img src="${friend.avatar}" alt="Image">
+            ${ifAvatar(friend)}                
                 <div id="name-field"><div><a href="/users/profile/${friend._id}">${friend.name}</a></div></div>
             </div>                    
         `
@@ -151,6 +162,7 @@
                 success: (data)=>{
                     container[0].innerHTML = `<div id="friends-listbox"></div>`
                     let innerContainer = $('#friends-listbox')
+                    console.log(data.friends)
                     for(friend of data.friends){
                         innerContainer[0].innerHTML += friendsDiv(friend)
                     }

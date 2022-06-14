@@ -30,9 +30,14 @@ module.exports.getPosts = async function(req, res){
 }
 
 module.exports.getFriends = async function(req, res){
-    let user = await User.findById(req.body.id)
+    try{
+        let user = await User.findOne({id:req.body.id})
             .populate('friendShip')
-    return res.json(200, {
-        friends: user.friendShip
-    })
+        return res.json(200, {
+            friends: user.friendShip
+        })
+    }
+    catch(err){
+        console.log("Error", err);
+    }
 }
