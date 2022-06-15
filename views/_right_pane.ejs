@@ -7,8 +7,18 @@
             <% }else{ %>
                 <% for(friend of friends) { %>
                     <ul>
-                       
-                        <a class="friends-display-content" href="/users/profile/<%=friend._id%>"><%=friend.name%></a>
+                        <a class="friends-display-content" href="/users/profile/<%=friend._id%>">
+                            <div class="right-pane-user-avatar">
+                                <%if(friend.avatar){%>
+                                    <img src="<%=friend.avatar%>">
+                                <%} else {%>
+                                    <img src="/uploads/users/avatars/profilepic.png" alt="">
+                                <%}%>
+                            </div>
+                            <div class="right-pane-user-name"><%= friend.name %></div> 
+                        </a>
+                    
+
                     </ul>
                 <% } %>
             <% } %>
@@ -22,7 +32,11 @@
                 <ul>
                     <a class="friends-display-content" href="/users/profile/<%= u.id %>">
                         <div class="right-pane-user-avatar">
-                            <img src="<%=u.avatar%>">
+                            <%if(u.avatar){%>
+                                <img src="<%=u.avatar%>">
+                            <%} else {%>
+                                <img src="/uploads/users/avatars/profilepic.png" alt="">
+                            <%}%>
                         </div>
                         <div class="right-pane-user-name"><%= u.name %></div> 
                     </a>

@@ -140,17 +140,27 @@ body {
               width: 70%; }
         body #home-layout #right #right-fixed #users-on-platform ul:hover {
           background-color: #3e3e3e; }
-        body #home-layout #right #right-fixed #friends-list .friends-display-content {
-          text-decoration: none;
-          color: #ffffff;
-          padding: 10px; }
         body #home-layout #right #right-fixed #friends-list ul {
           width: 80%;
           border-radius: 3px;
-          padding: 10px;
-          margin: 10px;
-          font-size: 18px;
           transition-duration: .2s; }
+          body #home-layout #right #right-fixed #friends-list ul .friends-display-content {
+            display: flex;
+            justify-content: space-between;
+            text-decoration: none;
+            color: #ffffff;
+            padding: 10px; }
+            body #home-layout #right #right-fixed #friends-list ul .friends-display-content .right-pane-user-avatar {
+              width: 30%; }
+              body #home-layout #right #right-fixed #friends-list ul .friends-display-content .right-pane-user-avatar img {
+                object-fit: cover;
+                height: 38px;
+                width: 38px;
+                border-radius: 50%; }
+            body #home-layout #right #right-fixed #friends-list ul .friends-display-content .right-pane-user-name {
+              display: flex;
+              align-items: center;
+              width: 70%; }
         body #home-layout #right #right-fixed #friends-list ul:hover {
           background-color: #3e3e3e; }
       body #home-layout #right ::-webkit-scrollbar {

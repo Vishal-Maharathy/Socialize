@@ -174,19 +174,34 @@ body{
                     }
                 }
                 #friends-list{
-                    .friends-display-content{
-                        text-decoration: none; 
-                        color: #ffffff;
-                        padding: 10px;
-                    }
                     ul{
                         width: 80%;
                         // border: solid 3px #5c5c5c;
                         border-radius: 3px;
-                        padding: 10px;
-                        margin: 10px;
-                        font-size: 18px;
+                        // padding: 10px;
+                        // margin: 10px;
                         transition-duration: .2s;
+                        .friends-display-content{
+                            display: flex;
+                            justify-content: space-between;
+                            text-decoration: none; 
+                            color: #ffffff;
+                            padding: 10px;
+                            .right-pane-user-avatar{
+                                width: 30%;
+                                img{
+                                    object-fit: cover;
+                                    height: 38px;
+                                    width: 38px;
+                                    border-radius: 50%;
+                                }
+                            }
+                            .right-pane-user-name{
+                                display: flex;
+                                align-items: center;
+                                width: 70%;
+                            }
+                        }
                     }
                     ul:hover{
                         background-color: #3e3e3e;
