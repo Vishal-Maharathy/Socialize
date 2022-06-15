@@ -40,7 +40,7 @@
     }
     let notificationLoader = function(){
         let notifDiv = $('#notification-box');
-        let notifButton = $('#notification-toggle');
+        let notifButton = $('.notification');
         notifButton.click(function(e){
             var x = window.matchMedia("(max-width: 750px)") 
             if(notifDiv[0].style.visibility == 'visible'){

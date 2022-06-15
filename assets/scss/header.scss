@@ -134,7 +134,16 @@ header{
       }
       .notification{
         padding: 8px 6px !important;
-        margin-right: 9px !important;
+        margin-right: 4px !important;
+        background-color: transparent !important;
+        font-size: 0 !important;
+        padding: 0 !important;
+        .badge{
+          top: 21px !important;
+          right: 1px !important;
+          padding: 2px 5px !important; 
+          font-size: 11px !important;
+        }
       }
     }
 }
