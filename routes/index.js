@@ -46,9 +46,10 @@ router.get('/auth/google/callback', passport.authenticate('google', {failureRedi
 // router.post('/succsign', userController.createSession); // replaced by new controller using passport.js
 // router.get('/signed_in', userController.profile);
 
+// this is for searching users for the SearchBox
+router.post('/searchEngine', homeController.searchUsers)
 
 // router for handling chattbox
-
 router.get('/chatLoad', chatController.loadChatEngine)
 
 //FOR DIFFERENT ROUTES

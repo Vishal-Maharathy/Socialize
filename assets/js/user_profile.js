@@ -71,7 +71,7 @@
     }
 
 
-    let loadingDiv = `
+    var loadingDiv = `
                     <div class="center">
                         <div class="wave"></div>
                         <div class="wave"></div>

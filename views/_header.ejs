@@ -14,7 +14,7 @@
         <% } %>
         <% if(locals.user){ %>
             <div id="top-right-options">
-                <!-- from here we will load notifications in a small div -->
+                <a href="" id="search-button" data-userid="<%=user.id%>"><img src="https://img.icons8.com/nolan/64/search.png" alt=""></a>
                 <a id="profile-page-text" href="/notifications/<%=user.id %>" class="notification" id="notification-toggle">
                     <span>Inbox</span>
                     <span class="badge"><%=no_of_notif%></span>
@@ -28,9 +28,19 @@
             </div>
             <div id="notification-box">
                 <h2>Notifications</h2>
-            </div> 
+            </div>
+
+
+            <div id="search-box">
+                <input type="text" placeholder="Search Socialize...">
+                <div id="container">                    
+                </div>
+            </div>
+
+
         <% } %>
     </div>
 </header>
 <script src="/js/notification.js"></script>
+<script src="/js/search_engine.js"></script>
 

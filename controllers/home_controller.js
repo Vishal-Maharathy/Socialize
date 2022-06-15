@@ -39,3 +39,17 @@ module.exports.home = async function(req, res){
         console.log(err);
     }    
 }
+
+module.exports.searchUsers = async (req, res)=>{
+    // userID
+    // searchUser
+    try{
+        let users = await User.find({name: { $regex: req.body.searchUser, $options: '<i>' }}, {name:1, id:1, avatar:1})
+        return res.json(200, {
+        users: users 
+        })
+    }
+    catch(err){console.log("Error in SearchUsers", err); return}
+    
+}
+
