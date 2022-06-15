@@ -1,7 +1,8 @@
 const Post = require('../models/post');
 const Comment = require('../models/comments');
 const Like = require('../models/likes');
-
+const path = require('path')
+const fs = require('fs')
 
 module.exports.create = async function(req, res){
     try{
@@ -44,6 +45,9 @@ module.exports.destroy = async function(req, res){
         if (post.user == req.user.id) {
             await Like.deleteMany({likeable: post, onModel: "Post"})
             await Like.deleteMany({_id: {$in: post.comments}})
+            if(post.postImage){
+                fs.unlinkSync(path.join(__dirname, '..', post.postImage))
+            }
             post.remove();
             await Comment.deleteMany({ post: req.params.id })
             if(req.xhr){

@@ -1,5 +1,6 @@
 const User = require('../models/sign_up');
 const passSchema = require('../models/password_reset')
+const fs = require('fs')
 const path = require('path');
 const jwt = require('jsonwebtoken')
 
@@ -33,14 +34,6 @@ module.exports.user = async function(req, res){
 }
 
 module.exports.update = async function(req, res){
-    // if(req.user.id == req.params.id){
-    //     User.findByIdAndUpdate(req.params.id, req.body, function(err, user){
-    //         req.flash('success', 'Profile Updated Succesfully!')
-    //         return res.redirect('/');
-    //     });
-    // }else{
-    //     return res.status(401).send('Unauthorized');
-    // }
     if(req.user.id == req.params.id){
         try{
             let user = await User.findById(req.params.id);
@@ -48,6 +41,9 @@ module.exports.update = async function(req, res){
                if(err){console.log("----Multer Error: ", err);}
                user.name = req.body.name;
                if(req.file){
+                if(user.avatar){
+                    fs.unlinkSync(path.join(__dirname, '..', user.avatar))
+                }
                 // this is saving the path of the uploaded file in the avatar path
                    user.avatar = User.avatarPath + '/' + req.file.filename;
                }

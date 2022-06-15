@@ -6,6 +6,8 @@ const commentsMailer = require('../mailer/comments_mailer')
 // const commentEmailWorker = require('../workers/comment_email_worker')
 const commentMailer = require('../mailer/comments_mailer')
 const Like = require('../models/likes')
+const path = require('path')
+const fs = require('fs')
 
 module.exports.create = async function (req, res) {
     try{
@@ -53,10 +55,6 @@ module.exports.create = async function (req, res) {
                 // let job = queue.create('emails', comment).save((err)=>{
                 //     if(err){console.log("error creating a queue!-->", err); return;}
                 // })
-
-
-
-
                 console.log(comment)
                 if(req.xhr){
                     return res.status(200).json({
@@ -82,6 +80,9 @@ module.exports.destroy = async function(req, res){
         if (comment.user == req.user.id) {
             let postId = comment.post;
             await Like.deleteMany({likeable: comment._id, onModel:'Comment'})
+            if(comment.commentImage){
+                fs.unlinkSync(path.join(__dirname, '..', comment.commentImage))
+            }
             comment.remove();
             let post = await Post.findByIdAndUpdate(postId, { $pull: { comments: req.params.id }})
             if(req.xhr){
