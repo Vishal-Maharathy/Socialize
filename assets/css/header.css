@@ -24,10 +24,10 @@ header {
         margin: 0; }
         header #header #top-right-options a:hover {
           color: #7819ab; }
-        header #header #top-right-options a #profile-page-img {
-          display: none; }
-        header #header #top-right-options a #profile-page-text {
-          display: inline-block; }
+      header #header #top-right-options #profile-page-img {
+        display: none; }
+      header #header #top-right-options #profile-page-text {
+        display: inline-block; }
       header #header #top-right-options .notification {
         background-color: #555;
         color: wrgb(13, 185, 183);
