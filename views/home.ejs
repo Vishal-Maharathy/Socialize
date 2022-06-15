@@ -16,7 +16,7 @@
                 <form action="/posts/create" enctype="multipart/form-data" method="post" id="new-post-form">
                     <textarea id="text_area" name="content" cols="65%" rows="10" placeholder="What's on your mind?" required></textarea><br>
                     <label id="upload-post" for="upload-post-input"><img src="../uploads/images/uploadImage.png" alt="Image"></label>
-                    <input id="upload-post-input" type="file" name="postAttachment">
+                    <input id="upload-post-input" type="file" name="postAttachment" accept="image/*">
                     <input type="submit" value="Post" id="post_form_button">
                 </form>
             </div>

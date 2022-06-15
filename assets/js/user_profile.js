@@ -5,7 +5,7 @@
         <div id="updation-form">
             <form action="/users/update/${data.id}" enctype="multipart/form-data" method="post" id="update-form">
                 <input type="text" name="name" placeholder="Your Name" value="${data.name}"  required><br>
-                <input type="file" name="avatar"><br>
+                <input type="file" name="avatar" accept="image/*"><br>
                 <input type="submit" value="Update">
             </form> 
         </div>

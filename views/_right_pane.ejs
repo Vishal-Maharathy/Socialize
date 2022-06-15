@@ -21,7 +21,10 @@
             <% for(u of all_users) { %>
                 <ul>
                     <a class="friends-display-content" href="/users/profile/<%= u.id %>">
-                        <img src="<%=u.avatar%>"> <%= u.name %>
+                        <div class="right-pane-user-avatar">
+                            <img src="<%=u.avatar%>">
+                        </div>
+                        <div class="right-pane-user-name"><%= u.name %></div> 
                     </a>
                 </ul>
             <% } %>
