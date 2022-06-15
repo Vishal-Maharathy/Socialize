@@ -117,18 +117,24 @@ header{
     }
     ::-webkit-scrollbar-corner {background-color: transparent;}
     @media screen and (max-width: 750px){
+      #title-image{
+        margin-top: 6px;
+        height: 28px !important;
+        width: 145px !important;
+      }
       #profile-page-img{
         display: inline-block !important;
         img{
-          height: 30px;
-          width: 30px;
+          height: 35px;
+          width: 35px;
         }
       }
       #profile-page-text{
         display: none !important;
       }
       .notification{
-        padding: 5px 6px !important;
+        padding: 8px 6px !important;
+        margin-right: 9px !important;
       }
     }
 }
