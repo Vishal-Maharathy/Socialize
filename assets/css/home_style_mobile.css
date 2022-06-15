@@ -210,8 +210,8 @@ body {
     font-size: 15px;
     margin-left: 1vw; }
   body .comment-content {
-    color: white;
-    font-size: 19px; }
+    color: #9a9999;
+    font-size: 16px; }
   body #commentAttach img {
     max-height: 140px;
     width: auto;
