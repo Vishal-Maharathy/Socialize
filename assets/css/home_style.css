@@ -120,6 +120,7 @@ body {
         body #home-layout #right #right-fixed #users-on-platform ul {
           width: 80%;
           border-radius: 3px;
+          margin: 3px 0px;
           transition-duration: .2s; }
           body #home-layout #right #right-fixed #users-on-platform ul .friends-display-content {
             display: flex;
@@ -143,6 +144,7 @@ body {
         body #home-layout #right #right-fixed #friends-list ul {
           width: 80%;
           border-radius: 3px;
+          margin: 3px 0px;
           transition-duration: .2s; }
           body #home-layout #right #right-fixed #friends-list ul .friends-display-content {
             display: flex;
