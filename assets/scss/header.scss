@@ -5,103 +5,130 @@ header{
     width: 100%;
     top: 0;
     z-index: 1;
-    #header{
-        display: flex;
-        justify-content: space-between;
-        margin-right: 20px;
-        #title-image{
-          height: 32px;
-          width: 162px;
-        }
-        a{
-            display: inline-block;
-            text-decoration: none; 
-            font-size: 20px;
-            color: #8e27c5;
-            &:hover{
-                color: #7819ab;
-             }
-        }
-        .notification {
-          background-color: #555;
-          color: wrgb(13, 185, 183);
-          text-decoration: none;
-          padding: 5px 16px;
-          position: relative;
-          display: inline-block;
-          border-radius: 2px;
+    // @media screen and (min-width:750px){
+      #header{
+          display: flex;
+          justify-content: space-between;
           margin-right: 20px;
-        }
-        .notification:hover {
-          background: rgb(69, 64, 64);
-        }
-        .notification .badge {
+          #title-image{
+            height: 32px;
+            width: 162px;
+          }
+          #top-right-options{
+            display: flex;
+            justify-content: space-between;
+            a{
+              display: inline-block;
+              text-decoration: none; 
+              font-size: 20px;
+              color: #8e27c5;
+              padding: 0;
+              margin: 0;
+              &:hover{
+                  color: #7819ab;
+               }
+               #profile-page-img{
+                display: none;
+              }
+              #profile-page-text{
+                display: inline-block;
+              }
+            }
+            .notification {
+              background-color: #555;
+              color: wrgb(13, 185, 183);
+              text-decoration: none;
+              padding: 5px 16px;
+              position: relative;
+              display: inline-block;
+              border-radius: 2px;
+              margin-right: 20px;
+            }
+            .notification:hover {
+              background: rgb(69, 64, 64);
+            }
+            .notification .badge {
+              position: absolute;
+              top: 17px;
+              right: -10px;
+              padding: 2px 7px;
+              border-radius: 50%;
+              background: red;
+              color: white;
+              font-size: 15px;
+              // visibility: hidden;
+            }
+          }
+          p{
+            margin: 0;
+            padding: 0;
+            font-size: 2.3vh;
+            text-align: left;
+            a{
+              font-weight: bold;
+              font-size: 2.1vh;
+              color: black;
+            }
+          }
+          #acceptRejectPanel{
+            a{
+              font-weight: bold;
+              font-size: 2.1vh;
+              color: black;
+            }
+            a:hover{
+              font-weight: bold;
+              font-size: 2.1vh;
+              color: rgb(121, 80, 80);
+              border-bottom: 1px solid black;
+            }
+          }
+          #PendingClearPanel{
+            a{
+              font-weight: bold;
+              font-size: 2.1vh;
+              color: rgb(255, 0, 0);
+            }
+            a:hover{
+              font-weight: bold;
+              font-size: 2.1vh;
+              color: rgb(121, 80, 80);
+              border-bottom: 1px solid black;
+            }
+          }
+      }
+      #notification-box{
           position: absolute;
-          top: 17px;
-          right: -10px;
-          padding: 2px 7px;
-          border-radius: 50%;
-          background: red;
-          color: white;
-          font-size: 15px;
-          // visibility: hidden;
-        }
-        p{
-          margin: 0;
-          padding: 0;
-          font-size: 2.3vh;
-          text-align: left;
-          a{
-            font-weight: bold;
-            font-size: 2.1vh;
-            color: black;
-          }
-        }
-        #acceptRejectPanel{
-          a{
-            font-weight: bold;
-            font-size: 2.1vh;
-            color: black;
-          }
-          a:hover{
-            font-weight: bold;
-            font-size: 2.1vh;
-            color: rgb(121, 80, 80);
-            border-bottom: 1px solid black;
-          }
-        }
-        #PendingClearPanel{
-          a{
-            font-weight: bold;
-            font-size: 2.1vh;
-            color: rgb(255, 0, 0);
-          }
-          a:hover{
-            font-weight: bold;
-            font-size: 2.1vh;
-            color: rgb(121, 80, 80);
-            border-bottom: 1px solid black;
-          }
-        }
-    }
-    #notification-box{
-        position: absolute;
-        height: 1px;
-        width: 1px;
-        background-color: grey;
-        right: 40px;
-        top: 40px;
-        visibility: hidden;
-        transition: .3s ease-out;
-        overflow: scroll;
-        border-radius: 20px;
-        padding: 10px;
-        font-size: 2vh;
-    }
+          height: 1px;
+          width: 1px;
+          background-color: grey;
+          right: 40px;
+          top: 40px;
+          visibility: hidden;
+          transition: .3s ease-out;
+          overflow: scroll;
+          border-radius: 20px;
+          padding: 10px;
+          font-size: 2vh;
+      }
+    // }
     .container {
       display: none;
     }
     ::-webkit-scrollbar-corner {background-color: transparent;}
     @media screen and (max-width: 750px){
+      #profile-page-img{
+        display: inline-block !important;
+        img{
+          height: 30px;
+          width: 30px;
+        }
+      }
+      #profile-page-text{
+        display: none !important;
+      }
+      .notification{
+        padding: 5px 6px !important;
+      }
     }
 }

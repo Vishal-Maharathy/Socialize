@@ -13,13 +13,14 @@
             </div>
         <% } %>
         <% if(locals.user){ %>
-            <div>
+            <div id="top-right-options">
                 <!-- from here we will load notifications in a small div -->
                 <a href="/notifications/<%=user.id %>" class="notification" id="notification-toggle">
                     <span>Inbox</span>
                     <span class="badge"><%=no_of_notif%></span>
                 </a>
-                <a href="/users/profile/<%= user.id %>">Profile</a>
+                <a id="profile-page-text" href="/users/profile/<%= user.id %>">Profile</a>
+                <a id="profile-page-img" href="/users/profile/<%= user.id %>"><img src="https://img.icons8.com/nolan/64/user.png" alt=""></a>
             </div>
             <div id="notification-box">
                 <h2>Notifications</h2>
