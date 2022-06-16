@@ -1,62 +1,50 @@
 // // SERVER-SIDE SOCKETS
 
-// let onlineUsers = [{}]
+let map_users = new Map();
+// map_users.set(123, 'user1')
+// map_users.set('user1')
+// map_users.delete(123)
 
-// module.exports.EstablishSocket = function(port){
-//     let io = require('socket.io')(port, {
-//         cors: {
-//             origin: 'http://localhost:8000',
-//           }        
-//     })
-//     io.on('connection', function(socket){
-//         // this is for adding to online users array
-//         socket.on('user-online', function(data){
-//             if(onlineUsers.find(x=>x.userID!=data.userID)){
-//                 let user = {
-//                     userName: data.userName,
-//                     userID: data.userID,
-//                     socketID: socket.id
-//                 }
-//                 onlineUsers.push(user);
-//             }
-//         })
-//         console.log('new connection recieved with ID: ', socket.id)
+// console.log(map_users.has(123))
+// console.log(map_users.has('user2'))
 
-//         socket.on('disconnect', function(){
-//             console.log('Socket disconnected! with ID: ', socket.id)
-//             // this is for removing from the online users array
-//             onlineUsers = onlineUsers.filter(x=>x.socketID!=socket.id)
-//         })
-
-//         socket.on('connect-room', function(roomName){
-//             socket.join(roomName);
-//             socket.broadcast.emit(roomName, `Connected to Room: ${roomName}`)
-//         })
-//         // here send the message and the room name to send the message
-//         socket.on('send-message', function(data){
-//             socket.emit(data.room, data.msg);
-//         })
-//     })
-// }
-
-module.exports.chatSockets = function(socketServer){
-    let io = require('socket.io')(socketServer, {
+module.exports.chatSockets = function(port){
+    let io = require('socket.io')(port, {
         cors: {
-            origin: 'http://44.238.38.106:8000',
+            // for AWS Server
+            // origin: 'http://44.238.38.106:8000 ',
+
+            // for LocalHost
+            origin: 'http://localhost:8000 ',
             } 
     });
     io.on('connection', function(socket){
-        console.log('new connection recieved: ', socket.id)
 
-        socket.on('disconnect', function(){
-            console.log('Socket disconnected: ', socket.id)
-        })
+
+        console.log('new connection recieved: ', socket.id)
+        
         socket.on('join_room', function(data){
             socket.join(data.chatroom)
             io.in(data.chatroom).emit('user_joined', data.user_name)
         })
         socket.on('send_message', function(data){
             io.in(data.chatRoom).emit('recieve_message', data);
+        })
+
+        // for saving user in the map along with socket ID
+        socket.on('sendUserID', function(data){
+            // user_ID: self.userID,
+            socket.join('onlineOfflineUser')
+            map_users.set(socket.id, data.user_ID)
+            io.in('onlineOfflineUser').emit('user_online', data.user_ID)
+        })
+
+        socket.on('disconnect', function(){
+            // for marking user online or offline
+            let user_ID = map_users.get(socket.id)
+            map_users.delete(socket.id)
+            io.in('onlineOfflineUser').emit('user_offline', user_ID)
+            // 
         })
     })
 }

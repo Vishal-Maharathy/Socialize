@@ -57,7 +57,7 @@
 <script src="/js/mobile_responsive.js"></script>
 <% if(locals.user) { %>
     <script>
-        new chatEngine('user-chat-box', '<%=locals.user.name%>')
+        new chatEngine('user-chat-box', '<%=locals.user.name%>', '<%=locals.user.id%>')
     </script>
 <% } %>
 </html>

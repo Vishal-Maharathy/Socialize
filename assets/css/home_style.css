@@ -203,12 +203,23 @@ body {
             color: #ffffff;
             padding: 10px; }
             body #home-layout #right #right-fixed #friends-list ul .friends-display-content .right-pane-user-avatar {
-              width: 30%; }
+              width: 30%;
+              display: flex;
+              justify-content: space-around;
+              align-items: center; }
               body #home-layout #right #right-fixed #friends-list ul .friends-display-content .right-pane-user-avatar img {
                 object-fit: cover;
                 height: 38px;
                 width: 38px;
                 border-radius: 50%; }
+              body #home-layout #right #right-fixed #friends-list ul .friends-display-content .right-pane-user-avatar #user-online-dot {
+                display: none;
+                height: 15px;
+                width: auto; }
+              body #home-layout #right #right-fixed #friends-list ul .friends-display-content .right-pane-user-avatar #user-offline-dot {
+                display: none;
+                height: 15px;
+                width: auto; }
             body #home-layout #right #right-fixed #friends-list ul .friends-display-content .right-pane-user-name {
               display: flex;
               align-items: center;

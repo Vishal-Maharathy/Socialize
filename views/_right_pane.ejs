@@ -7,13 +7,15 @@
             <% }else{ %>
                 <% for(friend of friends) { %>
                     <ul>
-                        <a class="friends-display-content" href="/users/profile/<%=friend._id%>">
+                        <a class="friends-display-content" href="/users/profile/<%=friend._id%>" data-friendID="<%=friend._id%>">
                             <div class="right-pane-user-avatar">
                                 <%if(friend.avatar){%>
                                     <img src="<%=friend.avatar%>">
                                 <%} else {%>
                                     <img src="/uploads/users/avatars/profilepic.png" alt="">
                                 <%}%>
+                                <img src="https://img.icons8.com/emoji/48/undefined/red-circle-emoji.png" id="user-online-dot" alt="">
+                                <img src="https://img.icons8.com/emoji/48/undefined/green-circle-emoji.png" id="user-offline-dot" alt="">
                             </div>
                             <div class="right-pane-user-name"><%= friend.name %></div> 
                         </a>

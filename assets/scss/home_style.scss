@@ -250,11 +250,24 @@ body{
                             padding: 10px;
                             .right-pane-user-avatar{
                                 width: 30%;
+                                display: flex;
+                                justify-content: space-around;
+                                align-items: center;
                                 img{
                                     object-fit: cover;
                                     height: 38px;
                                     width: 38px;
                                     border-radius: 50%;
+                                }
+                                #user-online-dot{
+                                    display: none;
+                                    height: 15px;
+                                    width: auto;
+                                }
+                                #user-offline-dot{
+                                    display: none;
+                                    height: 15px;
+                                    width: auto;
                                 }
                             }
                             .right-pane-user-name{
