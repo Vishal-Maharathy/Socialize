@@ -100,7 +100,6 @@
         closeSearchBox[0].style.color = '#9a25af'
         closeSearchBox[0].addEventListener('click', (event)=>{
         event.preventDefault();
-        console.log("Bruh")
         let container = $('#container-searches-D');
         container[0].style.height = '0px'
     })

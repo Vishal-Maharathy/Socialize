@@ -31,8 +31,9 @@ module.exports.getPosts = async function(req, res){
 
 module.exports.getFriends = async function(req, res){
     try{
-        let user = await User.findOne({id:req.body.id})
+        let user = await User.findOne({_id:req.body.id})
             .populate('friendShip')
+        console.log(user.friendShip)
         return res.json(200, {
             friends: user.friendShip
         })
