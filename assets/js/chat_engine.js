@@ -7,10 +7,10 @@ class chatEngine{
         this.userName = userName
         this.userID = userID
         // for AWS server
-        this.socket = io('http://44.238.38.106:5000')
+        // this.socket = io('http://44.238.38.106:5000')
 
         // for LocalHost
-        // this.socket = io('http://localhost:5000')
+        this.socket = io('http://localhost:5000')
 
         // calling method for setting up connection with server
         this.connectionHandler()
@@ -30,6 +30,9 @@ class chatEngine{
             self.socket.emit('sendUserID', {
                 user_ID: self.userID
             })
+            // this is for checking who is online for setting up the first time when user loads the page
+            // we will recieve a map here which will contain the online_users list
+            self.socket.emit('getOnlineUsers');
         })
 
         $('#send-message').click(function(){
@@ -62,6 +65,25 @@ class chatEngine{
             $('#chat-messages-list').append(newMessage)
         })
 
+
+        self.socket.on('usersOnlineList', function(arrayUsers){
+            let map = new Map()
+            for(let i of arrayUsers){
+                map.set(i);
+            }
+            let friends_list_box = $('#friends-list>ul>a')
+            for(let friend of friends_list_box){
+                if(map.has(friend.dataset.friendid)){
+                    // put the online div here
+                    // friend.innerHTML = 'Online'
+                    friend.querySelector('#user-offline-dot').style.display = 'inline-block'
+                    friend.querySelector('#user-online-dot').style.display = 'none'
+                }else{
+                    friend.querySelector('#user-online-dot').style.display = 'inline-block'
+                    friend.querySelector('#user-offline-dot').style.display = 'none'
+                }
+            }
+        })
         self.socket.on('user_online', function(userID){
             let friends_list_box = $('#friends-list>ul>a')
             for(let friend of friends_list_box){
