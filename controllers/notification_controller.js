@@ -51,6 +51,8 @@ module.exports.acceptRequest = async function(req, res){
 
         accepter.friendShip.push(sender._id)
         accepter.pendingFR.pull(sender._id)
+        // sending a ping to the acceptor if he/she is online
+        socket.emit('notification_ping', {sender: accepter, reciever: sender})
         accepter.save()
         if(req.xhr){
             return res.json(200)
