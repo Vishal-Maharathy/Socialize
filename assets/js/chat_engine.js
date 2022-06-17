@@ -16,7 +16,7 @@ class chatEngine{
         this.connectionHandler()
     }
     connectionHandler(){
-        let self = this
+        var self = this
         this.socket.on('connect', function(){
             console.log("Connection Established using sockets!")
             
@@ -33,8 +33,7 @@ class chatEngine{
             // this is for checking who is online for setting up the first time when user loads the page
             // we will recieve a map here which will contain the online_users list
             self.socket.emit('getOnlineUsers');
-        })
-
+        })        
         $('#send-message').click(function(){
             let msg = $('#chat-message-input').val();
             if(msg!=''){
@@ -103,6 +102,10 @@ class chatEngine{
                     friend.querySelector('#user-offline-dot').style.display = 'none'
                 }
             }
+        })
+        self.socket.on('notification_recieve', function(data){
+            // this will call callNotif function in notification.js
+            callNotif();
         })
     }
 

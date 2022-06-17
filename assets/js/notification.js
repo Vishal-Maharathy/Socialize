@@ -1,4 +1,10 @@
-{
+{  
+    var callNotif = function(){
+        let notif_indicator = $('.badge');
+        notif_indicator[0].innerHTML = eval(parseInt(notif_indicator[0].innerHTML)+1)
+        let notif_sound = $('#notif-sound')
+        notif_sound[0].play();
+    }
     // accept reject link setter for ajax
     let linkSetterAccnRej = function(){
         let listLinks = $('.link-set-AccnRej')
@@ -39,8 +45,8 @@
         }
     }
     let notificationLoader = function(){
-        let notifDiv = $('#notification-box');
         let notifButton = $('.notification');
+        let notifDiv = $('#notification-box');
         notifButton.click(function(e){
             var x = window.matchMedia("(max-width: 750px)") 
             if(notifDiv[0].style.visibility == 'visible'){
@@ -61,6 +67,7 @@
                 notifDiv[0].style.transition = '.3s ease-out'
             }
             e.preventDefault();
+            console.log("called")
             $.ajax({
                 type: 'get',
                 url: notifButton[0].href,
@@ -74,14 +81,19 @@
                             notifDiv[0].innerHTML+=htmlPending(i.name, data.data.currUser, i._id)
                         }
                     }
-                    if(data.data.acceptedFR.length==0){
+                    if(data.data.acceptedFR.length==0){5
                         notifDiv[0].innerHTML+= "<h3>No Other Notifications</h3>"
                     }
                     else{
+                        notifDiv[0].innerHTML+= "<h3>No Other Notifications</h3>"
                         for(i of data.data.acceptedFR){
                             notifDiv[0].innerHTML+=htmlAccepted(i.name, data.data.currUser, i._id)
                         }
                     }
+                    // make the nitification number indicator to 0
+                    let notif_indicator = $('.badge');
+                    notif_indicator[0].innerHTML = '0'
+                    
                     linkSetterAccnRej()
                     linkSetterPendReq()
                 },

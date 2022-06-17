@@ -1,4 +1,6 @@
 const User = require('../models/sign_up')
+let io_client = require('socket.io-client')
+let socket = io_client('http://localhost:5000')
 
 //loading notification
 module.exports.loadNotif = async function(req, res){
@@ -31,6 +33,9 @@ module.exports.sendRequest = async function(req, res){
     accepter_db.pendingFR.push(sender)
     accepter_db.save()
     req.flash('success', "Friend Request Sent!")
+
+    // sending a ping to the acceptor if he/she is online
+    socket.emit('notification_ping', {sender: sender, reciever: accepter})
     return res.redirect('back')
 }
 
