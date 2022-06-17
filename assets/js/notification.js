@@ -1,9 +1,8 @@
 {  
     var callNotif = function(){
-        let notif_indicatorD = $('.badgeD');
-        notif_indicatorD[0].innerHTML = eval(parseInt(notif_indicatorD[0].innerHTML)+1)
-        let notif_indicatorM = $('.badgeM');
-        notif_indicatorM[0].innerHTML = eval(parseInt(notif_indicatorM[0].innerHTML)+1)
+        let notif_indicator = $('.badge');
+        notif_indicator[0].innerHTML = eval(parseInt(notif_indicator[0].innerHTML)+1)
+        notif_indicator[1].innerHTML = eval(parseInt(notif_indicator[1].innerHTML)+1)
         let notif_sound = $('#notif-sound')
         notif_sound[0].play();
     }
@@ -95,6 +94,7 @@
                     // make the nitification number indicator to 0
                     let notif_indicator = $('.badge');
                     notif_indicator[0].innerHTML = '0'
+                    notif_indicator[1].innerHTML = '0'
                     
                     linkSetterAccnRej()
                     linkSetterPendReq()

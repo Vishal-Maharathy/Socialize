@@ -90,7 +90,7 @@ header {
         margin-right: 20px; }
       header #header #top-right-options .notification:hover {
         background: #454040; }
-      header #header #top-right-options .notification .badgeD {
+      header #header #top-right-options .notification .badge {
         position: absolute;
         top: 17px;
         right: -10px;
@@ -201,7 +201,7 @@ header {
       background-color: transparent !important;
       font-size: 0 !important;
       padding: 0 !important; }
-      header .notification .badgeM {
+      header .notification .badge {
         top: 21px !important;
         right: 1px !important;
         padding: 2px 5px !important;
