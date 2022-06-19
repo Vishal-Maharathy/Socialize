@@ -68,7 +68,6 @@
                 notifDiv[0].style.transition = '.3s ease-out'
             }
             e.preventDefault();
-            console.log("called")
             $.ajax({
                 type: 'get',
                 url: notifButton[0].href,
@@ -82,13 +81,15 @@
                             notifDiv[0].innerHTML+=htmlPending(i.name, data.data.currUser, i._id)
                         }
                     }
-                    if(data.data.acceptedFR.length==0){5
-                        notifDiv[0].innerHTML+= "<h3>No Other Notifications</h3>"
-                    }
-                    else{
+                    if(data.data.acceptedFR.length){
                         notifDiv[0].innerHTML+= "<h3>No Other Notifications</h3>"
                         for(i of data.data.acceptedFR){
                             notifDiv[0].innerHTML+=htmlAccepted(i.name, data.data.currUser, i._id)
+                        }
+                    }
+                    if(data.data.likeInfo.length){
+                        for(i of data.data.likeInfo){
+                            notifDiv[0].innerHTML+=likeNotif(i.user.name, i._id, i.onModel, data.data.currUser)
                         }
                     }
                     // make the nitification number indicator to 0
@@ -125,6 +126,16 @@
             <p><a href="/users/profile/${accepterID}">${accepterName}</a> has accepted your friend request</p>
             <div id="PendingClearPanel">
                 <a class="link-set-ReqAccepted" href="/notifications/requests/pendingReqClear?accepterID=${accepterID}&currID=${currUser}">Clear</a>
+            </div>
+        </ul>
+        `
+    }
+    let likeNotif = function(sender, likeID, type, accepterID){
+        return `
+        <ul>
+            <p><a href="/users/profile/${sender}">${sender}</a> has liked one your ${type}s</p>
+            <div id="PendingClearPanel">
+                <a class="link-set-ReqAccepted" href="/notifications/requests/LikeNotifClear?LikeModel=${likeID}&currID=${accepterID}">Clear</a>
             </div>
         </ul>
         `

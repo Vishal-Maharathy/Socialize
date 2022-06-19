@@ -8,15 +8,19 @@
                     type: 'post',
                     url: likeSection[i].href,
                     success: function (data) {
+                        let number = parseInt(likeSection[i].innerHTML)
                         if(data.data.ifDeleted){
                             // window.alert("like REDUCED")
-                            likeSection[i].innerText = " "+data.data.nums
+                            likeSection[i].innerHTML = number-1
                             likeSection[i].style.color = "rgb(105, 109, 114)"
                         }
                         else{
                             // window.alert("like INCREASED")
-                            likeSection[i].innerText = " "+data.data.nums
+                            likeSection[i].innerHTML = number+1
                             likeSection[i].style.color = "#00ff40"
+
+                            // call likeNotification in notification.js
+                            likeNotification(data.data);
                         }
                     },
                     error: function (error) {

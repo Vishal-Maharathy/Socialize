@@ -6,7 +6,12 @@ let socket = io_client('http://localhost:5000')
 module.exports.loadNotif = async function(req, res){
     // here you have to make the ajax request to make the div visible and
     // load the contents in it as well
-    let sender = await User.findById(req.user.id).populate('pendingFR acceptedFR') 
+    let sender = await User.findById(req.user.id).populate('pendingFR acceptedFR likeNotif').populate({
+        path: 'likeNotif',
+        populate: {
+            path: 'user'
+        }
+    })
     let pendingRequests = sender.pendingFR
     let acceptedRequests = sender.acceptedFR
     if(req.xhr){
@@ -14,7 +19,8 @@ module.exports.loadNotif = async function(req, res){
             data: {
                 currUser: req.user._id,
                 pendingFR: pendingRequests,
-                acceptedFR: acceptedRequests
+                acceptedFR: acceptedRequests,
+                likeInfo: sender.likeNotif
             },
             message: "Data Recieved Successfully!"
         })
@@ -52,7 +58,7 @@ module.exports.acceptRequest = async function(req, res){
         accepter.friendShip.push(sender._id)
         accepter.pendingFR.pull(sender._id)
         // sending a ping to the acceptor if he/she is online
-        socket.emit('notification_ping', {sender: accepter, reciever: sender})
+        socket.emit('notification_ping', {sender: sender, reciever: accepter})
         accepter.save()
         if(req.xhr){
             return res.json(200)
@@ -79,4 +85,12 @@ module.exports.pendingReqClear = async function(req, res){
     if(req.xhr){
         return res.json(200)
     }
+}
+
+module.exports.likeNotifClear = async function(req, res){
+    let user = await User.findById(req.query.currID)
+    console.log(req.query.LikeModel)
+    user.likeNotif.pull(req.query.LikeModel)
+    user.save();
+    return res.json(200, {})
 }

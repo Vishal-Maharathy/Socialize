@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const LikeSchema = new mongoose.Schema({
     user:{
-        type: mongoose.Schema.ObjectId
+        type: mongoose.Schema.ObjectId,
+        ref: 'User'
     },
     // what post or comment is liked, its id is saved in likeable
     likeable : {
@@ -13,7 +14,7 @@ const LikeSchema = new mongoose.Schema({
     onModel: {
         type: String,
         required: true,
-        enumL: ['Post', 'Comment']
+        enum: ['Post', 'Comment']
     }
 }, {timestamps:true})
 

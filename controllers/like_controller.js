@@ -2,8 +2,16 @@ const Like = require('../models/likes')
 const Comment = require('../models/comments')
 const Post = require('../models/post');
 const User = require('../models/sign_up')
+let io_client = require('socket.io-client')
+let socket = io_client('http://localhost:5000')
 
 module.exports.toggleLike = async function(req, res){
+    // below three params are for socket.io live like sent{
+    let like_who = res.locals.user._id /*who liked the post/comment */ 
+    let post_liked;
+    let comment_liked;
+    let like_whose; /*whose post/comment is liked */ 
+    //}
     try{
         //likes/toggle/?id=abcd&types= Post OR Comment
         let likeable;
@@ -11,18 +19,17 @@ module.exports.toggleLike = async function(req, res){
         let num_of_likes
         if(req.query.type=='Post'){
             likeable = await Post.findById(req.query.id)
-            Post.findById(req.query.id, function(err, posts){
-                num_of_likes = posts.likes.length
-            })
+            post_liked = req.query.id
+            like_whose = likeable.user
+            num_of_likes = likeable.likes.length
         }
         else{
             likeable = await Comment.findById(req.query.id)
-            Comment.findById(req.query.id, function(err, comments){
-                num_of_likes = comments.likes.length
-            })
+            comment_liked = req.query.id;
+            like_whose = likeable.user
+            num_of_likes = likeable.likes.length
         }
-        console.log(req.query.id, num_of_likes);
-        // check is like already exists
+        // check if like already exists
         let existingLike = await Like.findOne({
             user: req.user._id,
             likeable: req.query.id,
@@ -34,6 +41,9 @@ module.exports.toggleLike = async function(req, res){
             likeable.save()
             existingLike.remove()
             deleted = true
+            let user_liked = await User.findById(like_whose)
+            user_liked.likeNotif.pull(existingLike._id)
+            user_liked.save()
             // here make the ajax request and decrement the like
             if(req.xhr){
                 return res.json(200, {
@@ -53,6 +63,12 @@ module.exports.toggleLike = async function(req, res){
             })
             likeable.likes.push(newLike._id);
             likeable.save();
+            // push the like to likeNotif of the user whose post/comment is liked
+            let user_liked = await User.findById(like_whose)
+            user_liked.likeNotif.push(newLike._id)
+            user_liked.save()
+            // increase notification counter of notification badge
+            socket.emit('notification_ping', {sender: like_who, reciever: like_whose})
             // here make the ajax request and increment the like
             if(req.xhr){
                 return res.json(200, {

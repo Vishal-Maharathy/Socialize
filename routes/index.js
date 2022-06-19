@@ -26,6 +26,7 @@ router.get('/notifications/sendRequest/:id', notifController.sendRequest)
 router.get('/notifications/:id', notifController.loadNotif);
 router.get('/notifications/requests/acceptnreject', notifController.acceptRequest);
 router.get('/notifications/requests/pendingReqClear', notifController.pendingReqClear);
+router.get('/notifications/requests/LikeNotifClear', notifController.likeNotifClear);
 
 
 // below are routes for resetting a password if user forgets.
