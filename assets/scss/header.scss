@@ -250,5 +250,21 @@ header{
           font-size: 11px !important;
         }
       }
+      #notification-box{
+        p{
+          margin: 0;
+          padding: 0;
+          font-size: 14px;
+          text-align: left;
+        }
+        h2{
+          font-size: 15px;
+        }
+        #acceptRejectPanel{
+          a{
+            font-size: 14px !important;
+          }
+        }
+      }
     }
 }

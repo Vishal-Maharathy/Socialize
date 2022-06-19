@@ -205,4 +205,13 @@ header {
         top: 21px !important;
         right: 1px !important;
         padding: 2px 5px !important;
-        font-size: 11px !important; } }
+        font-size: 11px !important; }
+    header #notification-box p {
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+      text-align: left; }
+    header #notification-box h2 {
+      font-size: 15px; }
+    header #notification-box #acceptRejectPanel a {
+      font-size: 14px !important; } }
