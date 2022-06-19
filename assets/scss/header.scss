@@ -256,14 +256,23 @@ header{
           padding: 0;
           font-size: 14px;
           text-align: left;
+          a{
+            font-size: 14px !important;
+          }
         }
         h2{
-          font-size: 15px;
+          font-size: 20px !important;
+        }
+        h3{
+          font-size: 18px !important;
         }
         #acceptRejectPanel{
           a{
             font-size: 14px !important;
           }
+        }
+        #PendingClearPanel a{
+          font-size: 14px !important;
         }
       }
     }

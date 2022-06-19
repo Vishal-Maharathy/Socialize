@@ -20,10 +20,10 @@ module.exports.chatSockets = function(port){
     let io = require('socket.io')(port, {
         cors: {
             // for AWS Server
-            // origin: 'http://44.238.38.106:8000 ',
+            origin: 'http://44.238.38.106:8000 ',
 
             // for LocalHost
-            origin: 'http://localhost:8000 ',
+            // origin: 'http://localhost:8000 ',
             } 
     });
     io.on('connection', function(socket){

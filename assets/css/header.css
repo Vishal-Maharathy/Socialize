@@ -211,7 +211,13 @@ header {
       padding: 0;
       font-size: 14px;
       text-align: left; }
+      header #notification-box p a {
+        font-size: 14px !important; }
     header #notification-box h2 {
-      font-size: 15px; }
+      font-size: 20px !important; }
+    header #notification-box h3 {
+      font-size: 18px !important; }
     header #notification-box #acceptRejectPanel a {
+      font-size: 14px !important; }
+    header #notification-box #PendingClearPanel a {
       font-size: 14px !important; } }
