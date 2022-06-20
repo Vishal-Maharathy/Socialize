@@ -160,7 +160,7 @@ header {
     header #notification-box h3 {
       font-weight: 400; }
   header #search-box {
-    background-color: #56106de6;
+    background-color: #424143;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -168,16 +168,17 @@ header {
     position: absolute;
     height: 50vh;
     width: 60vw;
-    border-radius: 10px;
+    border-radius: 3px;
     top: 50px;
     left: 50%;
     transform: translateX(-50%);
     transition-duration: 0.5s; }
     header #search-box input {
       font-size: 20px;
+      font-family: 'Montserrat', sans-serif;
       color: #9e9e9e;
       width: 80%;
-      border-radius: 5px;
+      border-radius: 2px;
       margin-top: 20px;
       background-color: #d2dce514;
       outline: none;

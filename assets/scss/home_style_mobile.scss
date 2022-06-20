@@ -27,7 +27,7 @@ body{
     margin-top: 60px;
     padding: 0;
     background-color: #1c1d20;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     // font-size: 3vh;
     #home-layout{
         display: flex;
@@ -111,7 +111,7 @@ body{
                         #text_area{
                             background-color: transparent;
                             border: none;
-                            font-family: sans-serif;
+                            font-family: 'Montserrat', sans-serif;
                             color: #dcd8d8;
                             font-size: 20px;
                             height: 100px;
@@ -123,13 +123,13 @@ body{
                         }
                         #post_form_button{
                             display: block;
-                            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                            font-family: 'Montserrat', sans-serif;
                             background-color: #2374e1;
                             color: white;
                             border: none;
                             border-radius: 10px;
                             font-size: 18px;
-                            font-weight: lighter;
+                            font-weight: 500;
                             width: 40%;
                             // height: 5vh;
                         }
@@ -278,7 +278,7 @@ body{
     }
     .commenter{
         color: #41cb28;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: 'Montserrat', sans-serif;
 
     }
     .comment-title{
