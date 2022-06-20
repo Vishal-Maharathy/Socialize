@@ -115,8 +115,9 @@ module.exports.passwordreset = function(req, res){
             return res.redirect('signin');
         }
         else{
-            console.log("No User found with that email!");
-            return res.redirect('back')
+            // console.log("No User found with that email!");`
+            req.flash('error', 'No user found, you are not registered on Socialize')
+            return res.redirect('signup')
         }
     })
 }
