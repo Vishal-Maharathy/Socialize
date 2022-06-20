@@ -146,15 +146,19 @@ header {
     position: absolute;
     height: 1px;
     width: 1px;
-    background-color: #c92bd89c;
+    background-color: #4f4f4f;
     right: 40px;
     top: 40px;
     visibility: hidden;
     transition: .3s ease-out;
     overflow: scroll;
-    border-radius: 20px;
+    border-radius: 4px;
     padding: 10px;
-    font-size: 2vh; }
+    font-size: 13px; }
+    header #notification-box h2 {
+      font-weight: 500; }
+    header #notification-box h3 {
+      font-weight: 400; }
   header #search-box {
     background-color: #56106de6;
     display: flex;
