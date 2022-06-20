@@ -6,7 +6,7 @@ const development = {
     asset_path : 'assets',
     session_cookie_key: 'daddysboiii',
     db:'socialize_development',
-    db_pass:'LMAODEDLOLREKt1.',
+    db_pass:'socialize_production',
     smtp: {
         service: 'gmail',
         host: 'smtp.gmail.com',
@@ -28,7 +28,7 @@ const production = {
     asset_path : 'assets',
     session_cookie_key: 'daddysboiii',
     db:'socialize_development',
-    db_pass:'LMAODEDLOLREKt1.',    
+    db_pass:'socialize_production',    
     smtp: {
         service: 'gmail',
         host: 'smtp.gmail.com',
