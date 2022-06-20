@@ -14,7 +14,7 @@ const likeController = require('../controllers/like_controller')
 const notifController = require('../controllers/notification_controller')
 const chatController = require('../controllers/chat_controller')
 
-router.get('/', homeController.home);
+router.get('/', passport.checkAuthentication, homeController.home);
 router.get('/users/profile/:id', passport.checkAuthentication, userController.user);//here middleware is being used, only if the user is signed in, he/she will be able to access to the profile pahge else will be redirected to sign in page.
 router.post('/users/update/:id', passport.checkAuthentication, userController.update);
 router.get('/signup', userController.signup);
