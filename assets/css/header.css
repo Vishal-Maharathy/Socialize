@@ -61,6 +61,22 @@ header {
     header #header #title-image {
       height: 32px;
       width: 162px; }
+    header #header #loginOptions {
+      font-size: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 145px; }
+      header #header #loginOptions p {
+        display: inline-block;
+        color: #ef41fe; }
+      header #header #loginOptions a {
+        color: #f264ff;
+        text-decoration: none; }
+      header #header #loginOptions a:hover {
+        border-bottom: solid #4c1c78 1px; }
     header #header #top-right-options {
       display: flex;
       justify-content: space-between; }

@@ -22,7 +22,7 @@ body {
   margin-top: 60px;
   padding: 0;
   background-color: #1c1d20;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
   /* Modal Content/Box */
   /* The Close Button */ }
   body #home-layout {
@@ -233,7 +233,7 @@ body {
   body #heading {
     color: #646265;
     font-size: 3vw;
-    font-family: monospace;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold; }
   body #feed-posts #make-post #upload-post-input {
     display: none; }
@@ -279,19 +279,20 @@ body {
     body #text_area ::placeholder {
       color: black; }
   body #post_form_button {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #2374e1;
     color: white;
     border: none;
     border-radius: 10px;
     font-size: 18px;
-    font-weight: lighter;
+    font-weight: 500;
     width: 100%; }
   body #posts {
     color: #bea7a7; }
   body .commenter {
     color: #41cb28;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; }
   body .comment-title {
     color: white;
     font-size: 15px;
@@ -404,12 +405,12 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
     /* Black w/ opacity */ }
   body .modal-content {
-    background-color: #9c5ea2e8;
+    background-color: #767176e8;
     margin: 15% auto;
     /* 15% from the top and centered */
     padding: 20px;
-    border: 3px solid #a400b36e;
-    border-radius: 10px;
+    border: 3px solid #bfb9bf6e;
+    border-radius: 3px;
     width: 30%;
     /* Could be more or less, depending on screen size */ }
   body .close {

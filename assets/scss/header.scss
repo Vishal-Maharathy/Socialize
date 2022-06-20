@@ -67,6 +67,26 @@ header{
             height: 32px;
             width: 162px;
           }
+          #loginOptions{
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 145px;
+            p{
+              display: inline-block; 
+              color: #ef41fe;
+            }
+            a{
+              color: #f264ff;
+              text-decoration: none;
+            }
+            a:hover{
+              border-bottom: solid #4c1c78 1px;
+            }
+          }
           #top-right-options{
             display: flex;
             justify-content: space-between;
