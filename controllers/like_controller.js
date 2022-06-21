@@ -3,7 +3,7 @@ const Comment = require('../models/comments')
 const Post = require('../models/post');
 const User = require('../models/sign_up')
 let io_client = require('socket.io-client')
-let socket = io_client('http://localhost:5000')
+let socket = io_client('https://socialize-soc.herokuapp.com')
 
 module.exports.toggleLike = async function(req, res){
     // below three params are for socket.io live like sent{
