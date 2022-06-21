@@ -18,9 +18,6 @@
                             // window.alert("like INCREASED")
                             likeSection[i].innerHTML = number+1
                             likeSection[i].style.color = "#00ff40"
-
-                            // call likeNotification in notification.js
-                            likeNotification(data.data);
                         }
                     },
                     error: function (error) {
