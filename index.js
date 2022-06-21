@@ -21,9 +21,6 @@ const MongoStore = require('connect-mongo');
 const sassMiddleware = require('node-sass-middleware')
 const flash = require('connect-flash');
 
-// socket.io for chatting engine
-require('./controllers/sockets').chatSockets(5000)
-console.log("Chat server is listening on 5000")
 
 if(env.name=='development'){
     app.use(sassMiddleware({
@@ -80,9 +77,12 @@ let port  = process.env.PORT
 
 if(!port){port=8000}
 
-app.listen(port, function(err){
+var server = app.listen(port, function(err){
     if(err){
         console.log("Error running the server-> ", err);
     }
     console.log("Server is running on port-> ", port);
 })
+// socket.io for chatting engine
+require('./controllers/sockets').chatSockets(server)
+console.log("Chat server is listening on port 8000")

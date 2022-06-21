@@ -17,15 +17,17 @@ map_users_user_socket = new Map();
 
 
 module.exports.chatSockets = function(port){
-    let io = require('socket.io')(port, {
-        cors: {
-            // for AWS Server
-            origin: 'http://44.238.38.106:8000 ',
+    // let io = require('socket.io')(port, {
+    //     cors: {
+    //         // for AWS Server
+    //         // origin: 'http://44.238.38.106:8000 ',
 
-            // for LocalHost
-            // origin: 'http://localhost:8000 ',
-            } 
-    });
+    //         // for LocalHost
+    //         origin: 'http://localhost:8000 ',
+    //         } 
+    // });
+    let io = require('socket.io')(port);
+    
     io.on('connection', function(socket){
         console.log('new connection recieved: ', socket.id)
         socket.on('join_room', function(data){

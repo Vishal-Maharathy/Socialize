@@ -7,10 +7,10 @@ class chatEngine{
         this.userName = userName
         this.userID = userID
         // for AWS server
-        this.socket = io('http://44.238.38.106:5000')
+        this.socket = io('http://44.238.38.106:8000')
 
         // for LocalHost
-        // this.socket = io('http://localhost:5000')
+        // this.socket = io('http://localhost:8000')
 
         // calling method for setting up connection with server
         this.connectionHandler()
