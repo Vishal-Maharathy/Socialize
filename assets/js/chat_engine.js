@@ -7,7 +7,7 @@ class chatEngine{
         this.userName = userName
         this.userID = userID
         // for AWS server
-        this.socket = io('https://socialize-soc.herokuapp.com/')
+        this.socket = io('https://socialize-soc.herokuapp.com')
 
         // for LocalHost
         // this.socket = io('http://localhost:8000')
