@@ -9,7 +9,21 @@
             timeout : 1500
             }).show();
     }
-
+    // for showing loading when post is created
+    var loadingDiv = `
+    <div class="center">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    ` 
     //method to submit the form data for new post using AJAX
     let createPost = function () {
         let newPostform = $('#new-post-form');
@@ -17,6 +31,10 @@
             let form = $('#new-post-form')[0];
             let data = new FormData(form);
             e.preventDefault();
+            // code for loading screen
+            let loadingPart = $('#post_create_loading');
+            loadingPart[0].innerHTML = loadingDiv;            
+            // 
             $.ajax({
                 type: 'post',
                 enctype: 'multipart/form-data',
@@ -32,6 +50,7 @@
                 // data passed below is not same as above data.....,
                 // this data is returned from postController
                 success: function (data) {
+                    loadingPart[0].innerHTML = '';
                     let newPost = newPostDom(data.data.post, loadAvatar(data.data.post), loadPostImage(data.data.post));
                     $('#posts-list-container>ul').prepend(newPost);
                     deletePost($('.edit-delete-post', newPost));
