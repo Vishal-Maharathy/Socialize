@@ -12,7 +12,7 @@ Features:<br />
 🟢 See which friends are online(🟢) and who are offline(🔴)<br />
 🟢 SignIn with Google!<br />
 🟢 Reset Password by sending resetLink to registered email.<br />
-🟢 Search for new friends with Search Socialize feature.<br />
+🟢 Search for people with Search Socialize feature.<br />
 
 How To Run:
 1. Clone the repository
