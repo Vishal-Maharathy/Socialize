@@ -19,7 +19,7 @@ const development = {
     },
     google_clientID: '304321416322-2pesh4k4o7asgfdnf3srhs5o086tj19g.apps.googleusercontent.com',
     google_clientSecret: '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',
-    google_callbackURL: 'https://socialize-soc.herokuapp.com/auth/google/callback',
+    google_callbackURL: 'https://socialize-u707.onrender.com/auth/google/callback',
     jwtSecretKey: 'daddysboiii',
 }
 
@@ -41,7 +41,7 @@ const production = {
     },
     google_clientID: '304321416322-2pesh4k4o7asgfdnf3srhs5o086tj19g.apps.googleusercontent.com',
     google_clientSecret: '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',
-    google_callbackURL: 'https://socialize-soc.herokuapp.com/auth/google/callback',
+    google_callbackURL: 'https://socialize-u707.onrender.com/auth/google/callback',
     jwtSecretKey: 'daddysboiii'
 }
 
