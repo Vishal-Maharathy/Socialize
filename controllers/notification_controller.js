@@ -1,6 +1,6 @@
 const User = require('../models/sign_up')
 let io_client = require('socket.io-client')
-let socket = io_client('https://socialize-soc.herokuapp.com')
+let socket = io_client('https://socialize-u707.onrender.com')
 
 //loading notification
 module.exports.loadNotif = async function(req, res){
