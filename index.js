@@ -8,16 +8,12 @@ const env = require('./config/environment')
 const path = require('path')
 
 
-//used for session cookie
 const session = require('express-session')
 const passport = require('passport')
 const passportLocal = require('./config/passport-local-strategy')
 const passportJwt = require('./config/passport-jwt-strategy')
 const passportGoogle = require('./config/passport-google-oath2-strategy')
-//in the code down below, in video it was shown to add session as an argument but in v4 of mongo this was changes to not using session and 
-//the main app.use(session) is altered as shown in the required part
 const MongoStore = require('connect-mongo');
-// const { disable } = require('express/lib/application');
 const sassMiddleware = require('node-sass-middleware')
 const flash = require('connect-flash');
 
