@@ -62,7 +62,7 @@ let storage = multer.diskStorage({
       const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
       cb(null, file.fieldname + '-' + uniqueSuffix)
     }
-})w
+})
   
 //static methods
 UserSchema.statics.uploadedAvatar = multer({ storage: storage }).single('avatar');
